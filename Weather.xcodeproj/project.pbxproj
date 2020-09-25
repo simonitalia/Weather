@@ -56,15 +56,55 @@
 		2AFCD3BB251DE2D9003CDA70 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				2AFCD3BC251DE2D9003CDA70 /* AppDelegate.swift */,
-				2AFCD3BE251DE2D9003CDA70 /* SceneDelegate.swift */,
-				2AFCD3C0251DE2D9003CDA70 /* ViewController.swift */,
-				2AFCD3C2251DE2D9003CDA70 /* Main.storyboard */,
-				2AFCD3C5251DE2DC003CDA70 /* Assets.xcassets */,
-				2AFCD3C7251DE2DC003CDA70 /* LaunchScreen.storyboard */,
+				2AFCD3D2251DE3E9003CDA70 /* Support */,
+				2AFCD3D6251DE42C003CDA70 /* Model */,
+				2AFCD3D4251DE414003CDA70 /* Views */,
+				2AFCD3D7251DE43C003CDA70 /* Controllers */,
+				2AFCD3D3251DE408003CDA70 /* Assets */,
 				2AFCD3CA251DE2DC003CDA70 /* Info.plist */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		2AFCD3D2251DE3E9003CDA70 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				2AFCD3BC251DE2D9003CDA70 /* AppDelegate.swift */,
+				2AFCD3BE251DE2D9003CDA70 /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		2AFCD3D3251DE408003CDA70 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2AFCD3C5251DE2DC003CDA70 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		2AFCD3D4251DE414003CDA70 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2AFCD3C2251DE2D9003CDA70 /* Main.storyboard */,
+				2AFCD3C7251DE2DC003CDA70 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2AFCD3D6251DE42C003CDA70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2AFCD3D7251DE43C003CDA70 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2AFCD3C0251DE2D9003CDA70 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +256,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -296,7 +336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.magicaltomato.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +355,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.magicaltomato.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
