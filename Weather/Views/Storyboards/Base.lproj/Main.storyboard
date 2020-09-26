@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ICz-Ai-0HF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="46Y-Rc-Dvr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -18,9 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qdm-Ml-glC">
-                                <rect key="frame" x="10" y="94" width="394" height="708"/>
+                                <rect key="frame" x="10" y="88" width="394" height="714"/>
                                 <connections>
-                                    <segue destination="Ti8-l3-oEu" kind="embed" id="FAA-5W-f3K"/>
+                                    <segue destination="Ti8-l3-oEu" kind="embed" identifier="MainVCToWeatherVC" id="FAA-5W-f3K"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-eu-W7Z">
@@ -29,47 +29,72 @@
                                     <constraint firstAttribute="height" constant="50" id="2KM-Hp-H9h"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="filterButtonTapped:" destination="ICz-Ai-0HF" eventType="touchUpInside" id="UxU-UD-tNn"/>
+                                    <segue destination="V0e-0D-gSs" kind="presentation" identifier="MainVCToCountriesVC" id="JFG-YO-bg6"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpj-5R-bpm">
-                                <rect key="frame" x="10" y="44" width="394" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="l5e-pg-qqn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iz8-uA-t6w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Wpj-5R-bpm" firstAttribute="leading" secondItem="iz8-uA-t6w" secondAttribute="leading" constant="10" id="1fy-b4-PFO"/>
                             <constraint firstItem="Qdm-Ml-glC" firstAttribute="leading" secondItem="iz8-uA-t6w" secondAttribute="leading" constant="10" id="3i9-KY-sIE"/>
-                            <constraint firstItem="iz8-uA-t6w" firstAttribute="trailing" secondItem="Wpj-5R-bpm" secondAttribute="trailing" constant="10" id="MqP-mt-XQu"/>
                             <constraint firstItem="dJp-eu-W7Z" firstAttribute="top" secondItem="Qdm-Ml-glC" secondAttribute="bottom" constant="10" id="Mr7-qf-DoT"/>
+                            <constraint firstItem="Qdm-Ml-glC" firstAttribute="top" secondItem="iz8-uA-t6w" secondAttribute="top" id="V5s-fU-v9W"/>
                             <constraint firstItem="iz8-uA-t6w" firstAttribute="trailing" secondItem="dJp-eu-W7Z" secondAttribute="trailing" id="Wci-cG-iab"/>
-                            <constraint firstItem="Wpj-5R-bpm" firstAttribute="top" secondItem="iz8-uA-t6w" secondAttribute="top" id="WvR-qM-NH3"/>
                             <constraint firstItem="iz8-uA-t6w" firstAttribute="trailing" secondItem="Qdm-Ml-glC" secondAttribute="trailing" constant="10" id="pvw-nR-Xlf"/>
                             <constraint firstItem="dJp-eu-W7Z" firstAttribute="leading" secondItem="iz8-uA-t6w" secondAttribute="leading" id="sKD-FJ-IhO"/>
                             <constraint firstItem="dJp-eu-W7Z" firstAttribute="bottom" secondItem="iz8-uA-t6w" secondAttribute="bottom" id="yGM-7Z-gif"/>
-                            <constraint firstItem="Qdm-Ml-glC" firstAttribute="top" secondItem="Wpj-5R-bpm" secondAttribute="bottom" id="yVz-Rl-2ve"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CoM-WX-HEd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kza-uu-Nm6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-297" y="-479"/>
+            <point key="canvasLocation" x="613.04347826086962" y="-479.46428571428567"/>
+        </scene>
+        <!--Countries Table View Controller-->
+        <scene sceneID="hyh-vr-D5b">
+            <objects>
+                <tableViewController id="EMz-ls-vO6" customClass="CountriesTableViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Pdi-Q6-i5I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountriesTableViewCell" id="Msb-S9-8EO" customClass="CountriesTableViewCell" customModule="Weather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Msb-S9-8EO" id="FEM-4y-pYN">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EMz-ls-vO6" id="2Ey-II-NGY"/>
+                            <outlet property="delegate" destination="EMz-ls-vO6" id="e0y-ll-c0l"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="qbA-Ov-XYR"/>
+                    <connections>
+                        <outlet property="countriesTableView" destination="Pdi-Q6-i5I" id="6lg-4k-bRv"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIE-Je-lkf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1497" y="258"/>
         </scene>
         <!--Weather View Controller-->
         <scene sceneID="7mX-bX-j9e">
             <objects>
                 <viewController id="Ti8-l3-oEu" customClass="WeatherViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bwb-KW-afa">
-                        <rect key="frame" x="0.0" y="0.0" width="394" height="708"/>
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="714"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MJC-Yq-srf">
-                                <rect key="frame" x="0.0" y="0.0" width="394" height="708"/>
+                                <rect key="frame" x="0.0" y="0.0" width="394" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" id="UCm-5e-nnm" customClass="WeatherTableViewCell" customModule="Weather" customModuleProvider="target">
@@ -98,7 +123,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fC8-fa-iA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="461" y="-543"/>
+            <point key="canvasLocation" x="1371.0144927536232" y="-543.08035714285711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Gf-WZ-44G">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="46Y-Rc-Dvr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3j0-9R-44o">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ICz-Ai-0HF" kind="relationship" relationship="rootViewController" id="GDV-lX-aPF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zm3-n0-iUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-297.10144927536237" y="-479.46428571428567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fmq-vo-mFP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V0e-0D-gSs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a0N-ly-YBr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EMz-ls-vO6" kind="relationship" relationship="rootViewController" id="2pY-OM-jcY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6OF-OV-xiL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="611.59420289855075" y="257.8125"/>
         </scene>
     </scenes>
     <resources>

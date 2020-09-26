@@ -7,7 +7,18 @@
 
 import UIKit
 
+
+protocol WeatherViewControllerDelegate {
+	func updateWeatherData(with weather: [Weather])
+}
+
+
 class WeatherViewController: UIViewController {
+	
+	private enum WeatherTableViewSection {
+	   case main
+	}
+	
 	
 	//MARK: - Storyboard Connections
 
@@ -15,21 +26,18 @@ class WeatherViewController: UIViewController {
 	
 	
 	//MARK: - Class Properties
-	
-	private enum Section {
-	   case main
-	}
-	
-	
+	var delegate: WeatherViewControllerDelegate?
+
 	lazy private var weather = [Weather]() {
 		didSet {
-			print("Weather Data fetch. With objects: \(weather.count)")
 			updateUI()
+			delegate?.updateWeatherData(with: weather)
+				//update parent / mainVC data property
 		}
 	}
 	
 	
-	private var dataSource: UITableViewDiffableDataSource<Section, Weather>! //dataSource
+	private var dataSource: UITableViewDiffableDataSource<WeatherTableViewSection, Weather>! //dataSource
 
 	//MARK: - View Lifecycle
 	
@@ -53,7 +61,7 @@ class WeatherViewController: UIViewController {
 	
 	private func configureWeatherTableViewCell() {
 		
-		self.dataSource = UITableViewDiffableDataSource<Section, Weather>(tableView: self.weatherTableView, cellProvider: { (tableView, indexPath, location) -> UITableViewCell? in
+		self.dataSource = UITableViewDiffableDataSource<WeatherTableViewSection, Weather>(tableView: self.weatherTableView, cellProvider: { (tableView, indexPath, location) -> UITableViewCell? in
 		
 			let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.reuseIdentifier, for: indexPath) as? WeatherTableViewCell
 			
@@ -65,14 +73,12 @@ class WeatherViewController: UIViewController {
 	
 	private func fireGetWeatherFeed() {
 		NetworkController.shared.getWeatherFeed { [unowned self] result in
+			
 			switch result {
 				case .success(let weather):
 					self.weather = weather
-		
-				//display alert to user on error
 				case .failure(let error):
 					print(error.rawValue)
-
 			}
 		}
 	}
@@ -92,7 +98,7 @@ class WeatherViewController: UIViewController {
 
 extension WeatherViewController {
 	private func updateWeatherTableViewSnapshot() {
-		var snapshot = NSDiffableDataSourceSnapshot<Section, Weather>()
+		var snapshot = NSDiffableDataSourceSnapshot<WeatherTableViewSection, Weather>()
 		snapshot.appendSections([.main])
 		snapshot.appendItems(self.weather)
 		self.dataSource.apply(snapshot, animatingDifferences: true, completion: nil)

@@ -14,7 +14,8 @@ struct NetworkController {
 	
 	static let shared = NetworkController()
 	
-	private init() {} //prevent external initialization
+	private init() {}
+		//prevent external initialization
 	
 
 	func getWeatherFeed(completion: @escaping (Result<[Weather], WError>) -> Void) {
@@ -30,27 +31,25 @@ struct NetworkController {
 				return
 			}
 			
-			//bad http response
 			guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
 				completion(.failure(.invalidResponse))
 				return
 			}
 			
-			//bad data returned, or alternate message like api rate limit exceeded
 			guard let data = data else {
 				completion(.failure(.invalidData))
 				return
 			}
 			
-			//if success, try to parse
+			//on success
 			do {
 				let decoder = JSONDecoder()
 				let feed = try decoder.decode(Feed.self, from: data)
 				let weather = feed.data
-				completion(.success(weather)) //pass parsed data back to callee
+				completion(.success(weather)) //pass data back
 				
 			} catch {
-				completion(.failure(.invalidData))
+				completion(.failure(.invalidData)) //parse error
 			}
 		}
 
@@ -75,10 +74,9 @@ extension NetworkController {
 			static let json = "/venues/weather.json"
 		}
 
-		//resource
+		//resource (json feed, image etc)
 		case feed
 		
-		//get resource endpoint url
 		var url: URL? {
 			
 			switch self {
@@ -87,7 +85,6 @@ extension NetworkController {
 			}
 		}
 		
-		//construct endpoint URLComponents
 		func getURLComponents(for path: String) -> URLComponents {
 			var components = URLComponents()
 			components.scheme = URLComponent.scheme

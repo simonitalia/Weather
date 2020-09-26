@@ -20,7 +20,7 @@ class WeatherTableViewCell: UITableViewCell {
 	static let reuseIdentifier = "WeatherTableViewCell"
 	static let nibName = "WeatherTableViewCell"
 	
-	//MARK: - Nib Outlets
+	//MARK: - Cell Outlets
 	
 	@IBOutlet var labels: [UILabel]!
 	@IBOutlet weak var iconImageView: UIImageView!

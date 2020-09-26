@@ -17,3 +17,4 @@ struct Country: Codable, Hashable {
 		case name = "_name"
 	}
 }
+
