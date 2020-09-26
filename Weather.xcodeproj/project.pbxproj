@@ -83,14 +83,6 @@
 			path = WeatherTableViewCell;
 			sourceTree = "<group>";
 		};
-		2ADF4A1A251EF3EE00ACF740 /* TableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				2ADF4A19251EF3CE00ACF740 /* WeatherTableViewCell */,
-			);
-			path = TableViewCells;
-			sourceTree = "<group>";
-		};
 		2ADF4A1B251EF41500ACF740 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +141,7 @@
 		2AFCD3D4251DE414003CDA70 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2ADF4A1A251EF3EE00ACF740 /* TableViewCells */,
+				2ADF4A19251EF3CE00ACF740 /* WeatherTableViewCell */,
 				2ADF4A1B251EF41500ACF740 /* Storyboards */,
 			);
 			path = Views;

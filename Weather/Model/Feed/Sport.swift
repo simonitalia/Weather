@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Sport: Codable {
+struct Sport: Codable, Hashable {
 	let sportID: String
 	let description: String
 

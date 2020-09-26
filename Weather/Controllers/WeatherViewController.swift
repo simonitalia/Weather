@@ -10,20 +10,33 @@ import UIKit
 class WeatherViewController: UIViewController {
 	
 	//MARK: - Storyboard Connections
-	
+
 	@IBOutlet weak var weatherTableView: UITableView!
 	
 	
 	//MARK: - Class Properties
 	
-	lazy var weather = [Weather]()
-
+	private enum Section {
+	   case main
+	}
 	
+	
+	lazy private var weather = [Weather]() {
+		didSet {
+			print("Weather Data fetch. With objects: \(weather.count)")
+			updateUI()
+		}
+	}
+	
+	
+	private var dataSource: UITableViewDiffableDataSource<Section, Weather>! //dataSource
+
 	//MARK: - View Lifecycle
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configureWeatherTableView()
+		configureWeatherTableViewCell()
 		fireGetWeatherFeed()
 	}
 	
@@ -31,8 +44,22 @@ class WeatherViewController: UIViewController {
 	//MARK: - ViewController Configuration
 	
 	private func configureWeatherTableView() {
-		weatherTableView.dataSource = self
+		weatherTableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.reuseIdentifier)
+		weatherTableView.register(UINib(nibName: WeatherTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: WeatherTableViewCell.reuseIdentifier)
+		
 		weatherTableView.delegate = self
+	}
+	
+	
+	private func configureWeatherTableViewCell() {
+		
+		self.dataSource = UITableViewDiffableDataSource<Section, Weather>(tableView: self.weatherTableView, cellProvider: { (tableView, indexPath, location) -> UITableViewCell? in
+		
+			let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.reuseIdentifier, for: indexPath) as? WeatherTableViewCell
+			
+			cell?.setTableCellContent(for: location)
+			return cell
+		})
 	}
 	
 	
@@ -49,23 +76,31 @@ class WeatherViewController: UIViewController {
 			}
 		}
 	}
+	
+	
+	//MARK: - UI
+	
+	private func updateUI() {
+		DispatchQueue.main.async {
+			self.updateWeatherTableViewSnapshot()
+		}
+	}
 }
 
 
-//MARK: - Weather TableView Delegates
+//MARK: - Weather TableView DataSource
 
-extension WeatherViewController: UITableViewDataSource {
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+extension WeatherViewController {
+	private func updateWeatherTableViewSnapshot() {
+		var snapshot = NSDiffableDataSourceSnapshot<Section, Weather>()
+		snapshot.appendSections([.main])
+		snapshot.appendItems(self.weather)
+		self.dataSource.apply(snapshot, animatingDifferences: true, completion: nil)
 	}
-	
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		return UITableViewCell()
-	}
-	
-	
 }
 
+
+//MARK: - Weather TableView Delegate
 
 extension WeatherViewController: UITableViewDelegate {
 	

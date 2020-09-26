@@ -8,7 +8,7 @@
 import Foundation
 
 //MARK: - Weather Object
-struct Weather: Codable {
+struct Weather: Codable, Hashable {
 	let venueID: String
 	let name: String
 	let country: Country

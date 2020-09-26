@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Country Object
-struct Country: Codable {
+struct Country: Codable, Hashable {
 	let countryID: String
 	let name: String
 
