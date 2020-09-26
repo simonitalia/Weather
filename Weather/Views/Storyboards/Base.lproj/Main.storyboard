@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ICz-Ai-0HF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="28H-h8-CIN">
+            <objects>
+                <viewController id="ICz-Ai-0HF" customClass="MainViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HhJ-eb-xfs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qdm-Ml-glC">
+                                <rect key="frame" x="10" y="94" width="394" height="708"/>
+                                <connections>
+                                    <segue destination="Ti8-l3-oEu" kind="embed" id="FAA-5W-f3K"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-eu-W7Z">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2KM-Hp-H9h"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpj-5R-bpm">
+                                <rect key="frame" x="10" y="44" width="394" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="l5e-pg-qqn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iz8-uA-t6w"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Wpj-5R-bpm" firstAttribute="leading" secondItem="iz8-uA-t6w" secondAttribute="leading" constant="10" id="1fy-b4-PFO"/>
+                            <constraint firstItem="Qdm-Ml-glC" firstAttribute="leading" secondItem="iz8-uA-t6w" secondAttribute="leading" constant="10" id="3i9-KY-sIE"/>
+                            <constraint firstItem="iz8-uA-t6w" firstAttribute="trailing" secondItem="Wpj-5R-bpm" secondAttribute="trailing" constant="10" id="MqP-mt-XQu"/>
+                            <constraint firstItem="dJp-eu-W7Z" firstAttribute="top" secondItem="Qdm-Ml-glC" secondAttribute="bottom" constant="10" id="Mr7-qf-DoT"/>
+                            <constraint firstItem="iz8-uA-t6w" firstAttribute="trailing" secondItem="dJp-eu-W7Z" secondAttribute="trailing" id="Wci-cG-iab"/>
+                            <constraint firstItem="Wpj-5R-bpm" firstAttribute="top" secondItem="iz8-uA-t6w" secondAttribute="top" id="WvR-qM-NH3"/>
+                            <constraint firstItem="iz8-uA-t6w" firstAttribute="trailing" secondItem="Qdm-Ml-glC" secondAttribute="trailing" constant="10" id="pvw-nR-Xlf"/>
+                            <constraint firstItem="dJp-eu-W7Z" firstAttribute="leading" secondItem="iz8-uA-t6w" secondAttribute="leading" id="sKD-FJ-IhO"/>
+                            <constraint firstItem="dJp-eu-W7Z" firstAttribute="bottom" secondItem="iz8-uA-t6w" secondAttribute="bottom" id="yGM-7Z-gif"/>
+                            <constraint firstItem="Qdm-Ml-glC" firstAttribute="top" secondItem="Wpj-5R-bpm" secondAttribute="bottom" id="yVz-Rl-2ve"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kza-uu-Nm6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-297" y="-479"/>
+        </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="7mX-bX-j9e">
+            <objects>
+                <viewController id="Ti8-l3-oEu" customClass="WeatherViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bwb-KW-afa">
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="708"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MJC-Yq-srf">
+                                <rect key="frame" x="0.0" y="0.0" width="394" height="708"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" id="UCm-5e-nnm" customClass="WeatherTableViewCell" customModule="Weather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="394" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UCm-5e-nnm" id="s0x-TJ-wvP">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VrM-6f-ySl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MJC-Yq-srf" firstAttribute="leading" secondItem="bwb-KW-afa" secondAttribute="leading" id="DF7-YE-HNi"/>
+                            <constraint firstAttribute="bottom" secondItem="MJC-Yq-srf" secondAttribute="bottom" id="DVj-YQ-Q2k"/>
+                            <constraint firstItem="MJC-Yq-srf" firstAttribute="top" secondItem="bwb-KW-afa" secondAttribute="top" id="Oa6-B6-u95"/>
+                            <constraint firstAttribute="trailing" secondItem="MJC-Yq-srf" secondAttribute="trailing" id="nIi-2S-QWA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="weatherTableView" destination="MJC-Yq-srf" id="xus-7o-wN2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fC8-fa-iA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="461" y="-543"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -7,15 +7,16 @@
 
 import Foundation
 
-//MARK: - Network Controller for fetching remote resources
+//MARK: - Network Controller
 struct NetworkController {
 	
-	//Shared / global accessible property
+	//MARK: - Class Properties
+	
 	static let shared = NetworkController()
 	
 	private init() {} //prevent external initialization
 	
-	//fetch json feed from remote server
+
 	func getWeatherFeed(completion: @escaping (Result<[Weather], WError>) -> Void) {
 		guard let url = Endpoint.feed.url else {
 			fatalError("FeedError! Url is missing!") //can handle more gracefully
@@ -59,6 +60,7 @@ struct NetworkController {
 
 
 //MARK: - Endpoints
+
 extension NetworkController {
 	
 	//Endpoints

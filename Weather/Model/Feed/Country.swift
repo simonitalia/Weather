@@ -17,14 +17,3 @@ struct Country: Codable {
 		case name = "_name"
 	}
 }
-
-extension Country {
-	enum Name: String, Codable {
-		case australia = "Australia"
-		case hongKong = "Hong Kong"
-		case ireland = "Ireland"
-		case newZealand = "New Zealand"
-		case singapore = "Singapore"
-		case unitedKingdom = "United Kingdom"
-	}
-}

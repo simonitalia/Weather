@@ -16,9 +16,3 @@ struct Sport: Codable {
 		case description = "_description"
 	}
 }
-
-extension Sport {
-	enum Description: String, Codable {
-		case horseRacing = "Horse Racing"
-	}
-}
