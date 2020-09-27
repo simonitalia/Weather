@@ -51,7 +51,6 @@ class VenuesViewController: UIViewController {
 	
 	
 	private func configureVenuesTableViewCell() {
-		
 		self.dataSource = UITableViewDiffableDataSource<VenuesTableViewSection, Venue>(tableView: self.venuesTableView, cellProvider: { (tableView, indexPath, location) -> UITableViewCell? in
 		
 			let cell = tableView.dequeueReusableCell(withIdentifier: VenuesTableViewCell.reuseIdentifier, for: indexPath) as? VenuesTableViewCell
@@ -75,7 +74,6 @@ class VenuesViewController: UIViewController {
 //MARK: - Venues TableView DataSource
 
 extension VenuesViewController {
-	
 	private func updateVenuesTableViewSnapshot() {
 		var snapshot = NSDiffableDataSourceSnapshot<VenuesTableViewSection, Venue>()
 		snapshot.appendSections([.main])
@@ -88,7 +86,6 @@ extension VenuesViewController {
 //MARK: - MainViewControllerDelegate Delegate
 
 extension VenuesViewController: MainViewControllerDelegate {
-	
 	func updateVenuesDisplayed(with venues: [Venue]) {
 		self.venues = venues
 	}

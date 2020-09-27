@@ -17,6 +17,10 @@ class MainViewController: UIViewController {
 	//MARK: - Storyboard Outlets
 	@IBOutlet weak var filterButton: WButton!
 	
+	@IBAction func filterButtonTapped(_ sender: Any) {
+		presentCountriesViewController()
+	}
+	
 	
 	//MARK: Properties
 	
@@ -41,7 +45,10 @@ class MainViewController: UIViewController {
 	private enum Identifier {
 		enum Segue {
 			static let mainVCToVenuesVC = "MainVCToVenuesVC"
-			static let mainVCToCountriesTableVC = "MainVCToCountriesTableVC"
+		}
+		
+		enum Storyboard {
+			static let countriesTableVC = "CountriesTableVC"
 		}
 	}
 	
@@ -50,12 +57,17 @@ class MainViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		configureNavigationBar()
 		fireGetWeatherFeed()
 		configureFilterButton(with: nil)
     }
 	
 	
 	//MARK: - ConfigureViewController
+	
+	private func configureNavigationBar() {
+		title = "Weather"
+	}
 	
 	private func configureFilterButton(with countryName: String?) {
 		filterButton.setButtonText(with: countryName)
@@ -81,22 +93,25 @@ class MainViewController: UIViewController {
 
 extension MainViewController {
 	
+	//Child VC / VenuesVC
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		
-		switch segue.identifier {
+		if segue.identifier == Identifier.Segue.mainVCToVenuesVC {
+			let vc = segue.destination as! VenuesViewController
+			vc.mainVC = self
+		}
+	}
+	
+	
+	//CountriesVC
+	private func presentCountriesViewController() {
+		if let vc = storyboard?.instantiateViewController(withIdentifier: Identifier.Storyboard.countriesTableVC) as? CountriesTableViewController {
 			
-			case Identifier.Segue.mainVCToVenuesVC:
-				let vc = segue.destination as! VenuesViewController
-				vc.mainVC = self
-				
-			case Identifier.Segue.mainVCToCountriesTableVC:
-				let vc = segue.destination as! CountriesTableViewController
-				let countries = allVenues?.getUniqueCountries()
-				vc.countries = countries
-				vc.delegate = self
-
-			default:
-				break
+			let countries = allVenues?.getUniqueCountries()
+			vc.countries = countries
+			vc.delegate = self
+			
+			let nc = UINavigationController(rootViewController: vc)
+			present(nc, animated: true)
 		}
 	}
 }
@@ -105,7 +120,6 @@ extension MainViewController {
 //MARK: - CountriesTableViewController Delegate
 
 extension MainViewController: CountriesTableViewControllerDelegate {
-	
 	func filterVenues(by country: Country) {
 		let filterdVenues = allVenues?.filterList(by: country)
 		venuesDisplayed = filterdVenues
@@ -114,4 +128,3 @@ extension MainViewController: CountriesTableViewControllerDelegate {
 		configureFilterButton(with: name)
 	}
 }
-

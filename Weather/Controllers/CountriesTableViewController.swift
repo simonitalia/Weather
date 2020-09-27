@@ -30,19 +30,17 @@ class CountriesTableViewController: UITableViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		configureNavigationBar()
 		configureCountriesTableView()
     }
 	
 	
-	override func viewWillDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated)
-		if let country = filterCountry {
-			delegate?.filterVenues(by: country)
-		}
-	}
-	
-	
 	//MARK: - ViewController Configuration
+	
+	private func configureNavigationBar() {
+		title = "Filter by Country"
+		navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissVC))
+	}
 	
 	private func configureCountriesTableView() {
 		countriesTableView.tableFooterView = UIView() //hides empty rows
@@ -85,5 +83,19 @@ extension CountriesTableViewController {
 			let country = countries[indexPath.row]
 			filterCountry = country
 		}
+		
+		dismissVC()
+	}
+}
+
+//MARK: Navigation
+
+extension CountriesTableViewController {
+	@objc func dismissVC() {
+		if let country = filterCountry {
+			delegate?.filterVenues(by: country)
+		}
+		
+		dismiss(animated: true, completion: nil)
 	}
 }
