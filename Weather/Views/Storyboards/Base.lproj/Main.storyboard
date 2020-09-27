@@ -23,7 +23,7 @@
                                     <segue destination="Ti8-l3-oEu" kind="embed" identifier="MainVCToVenuesVC" id="FAA-5W-f3K"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-eu-W7Z">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-eu-W7Z" customClass="WButton" customModule="Weather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2KM-Hp-H9h"/>
@@ -47,6 +47,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CoM-WX-HEd"/>
+                    <connections>
+                        <outlet property="filterButton" destination="dJp-eu-W7Z" id="VaQ-5y-m8g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kza-uu-Nm6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

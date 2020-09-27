@@ -14,6 +14,10 @@ protocol MainViewControllerDelegate {
 
 class MainViewController: UIViewController {
 	
+	//MARK: - Storyboard Outlets
+	@IBOutlet weak var filterButton: WButton!
+	
+	
 	//MARK: Properties
 	
 	var delegate: MainViewControllerDelegate?
@@ -47,8 +51,15 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		fireGetWeatherFeed()
-		
+		configureFilterButton(with: nil)
     }
+	
+	
+	//MARK: - ConfigureViewController
+	
+	private func configureFilterButton(with countryName: String?) {
+		filterButton.setButtonText(with: countryName)
+	}
 	
 	
 	private func fireGetWeatherFeed() {
@@ -98,6 +109,9 @@ extension MainViewController: CountriesTableViewControllerDelegate {
 	func filterVenues(by country: Country) {
 		let filterdVenues = allVenues?.filterList(by: country)
 		venuesDisplayed = filterdVenues
+		
+		let name = country.name
+		configureFilterButton(with: name)
 	}
 }
 
