@@ -21,6 +21,11 @@ class MainViewController: UIViewController {
 		presentCountriesViewController()
 	}
 	
+	@IBAction func refreshBarButtonTapped(_ sender: UIBarButtonItem) {
+		fireGetWeatherFeed()
+	}
+	
+	
 	
 	//MARK: Properties
 	
@@ -30,6 +35,7 @@ class MainViewController: UIViewController {
 	private var allVenues: Venues? {
 		didSet {
 			venuesDisplayed = allVenues?.list
+			configureFilterButton(with: nil)
 		}
 	}
 	
@@ -59,20 +65,10 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 		configureNavigationBar()
 		fireGetWeatherFeed()
-		configureFilterButton(with: nil)
     }
 	
 	
-	//MARK: - ConfigureViewController
-	
-	private func configureNavigationBar() {
-		title = "Weather"
-	}
-	
-	private func configureFilterButton(with countryName: String?) {
-		filterButton.setButtonText(with: countryName)
-	}
-	
+	//MARK: - ViewController Configuration
 	
 	private func fireGetWeatherFeed() {
 		NetworkController.shared.getWeatherFeed { [unowned self] result in
@@ -86,6 +82,21 @@ class MainViewController: UIViewController {
 			}
 		}
 	}
+	
+	
+	//MARK: UI Configuration
+	
+	private func configureNavigationBar() {
+		title = "Weather"
+	}
+	
+
+	private func configureFilterButton(with countryName: String?) {
+		DispatchQueue.main.async { [unowned self] in
+			filterButton.setButtonText(with: countryName)
+		}
+	}
+	
 }
 
 

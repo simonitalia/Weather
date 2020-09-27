@@ -35,12 +35,13 @@ class CountriesTableViewController: UITableViewController {
     }
 	
 	
-	//MARK: - ViewController Configuration
+	//MARK: - UI Configuration
 	
 	private func configureNavigationBar() {
 		title = "Filter by Country"
 		navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissVC))
 	}
+	
 	
 	private func configureCountriesTableView() {
 		countriesTableView.tableFooterView = UIView() //hides empty rows

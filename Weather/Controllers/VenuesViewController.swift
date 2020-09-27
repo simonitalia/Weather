@@ -61,10 +61,10 @@ class VenuesViewController: UIViewController {
 	}
 
 	
-	//MARK: - UI
+	//MARK: - UI Configuration
 	
 	private func updateUI() {
-		DispatchQueue.main.async {
+		DispatchQueue.main.async { [unowned self] in
 			self.updateVenuesTableViewSnapshot()
 		}
 	}

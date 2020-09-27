@@ -46,7 +46,13 @@
                             <constraint firstItem="dJp-eu-W7Z" firstAttribute="bottom" secondItem="iz8-uA-t6w" secondAttribute="bottom" id="yGM-7Z-gif"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="CoM-WX-HEd"/>
+                    <navigationItem key="navigationItem" id="CoM-WX-HEd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="WgI-cD-9ez">
+                            <connections>
+                                <action selector="refreshBarButtonTapped:" destination="ICz-Ai-0HF" id="Bxm-OE-Tf8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="filterButton" destination="dJp-eu-W7Z" id="VaQ-5y-m8g"/>
                     </connections>
