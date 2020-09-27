@@ -8,6 +8,7 @@
 import Foundation
 
 // MARK: - Country Object
+
 struct Country: Codable, Hashable {
 	let countryID: String
 	let name: String
@@ -17,4 +18,3 @@ struct Country: Codable, Hashable {
 		case name = "_name"
 	}
 }
-

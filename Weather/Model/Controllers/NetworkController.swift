@@ -10,14 +10,16 @@ import Foundation
 //MARK: - Network Controller
 struct NetworkController {
 	
-	//MARK: - Class Properties
+	//MARK: - Properties
 	
 	static let shared = NetworkController()
 	
 	private init() {}
 		//prevent external initialization
 	
-
+	
+	//MARK: - Network
+	
 	func getWeatherFeed(completion: @escaping (Result<[Weather], WError>) -> Void) {
 		guard let url = Endpoint.feed.url else {
 			fatalError("FeedError! Url is missing!") //can handle more gracefully

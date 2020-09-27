@@ -15,18 +15,15 @@ protocol WeatherViewControllerDelegate {
 
 class WeatherViewController: UIViewController {
 	
+	//MARK: - Properties
+	
 	private enum WeatherTableViewSection {
 	   case main
 	}
 	
-	
-	//MARK: - Storyboard Connections
-
-	@IBOutlet weak var weatherTableView: UITableView!
-	
-	
-	//MARK: - Class Properties
 	var delegate: WeatherViewControllerDelegate?
+	
+	private var dataSource: UITableViewDiffableDataSource<WeatherTableViewSection, Weather>! //dataSource
 
 	lazy private var weather = [Weather]() {
 		didSet {
@@ -37,7 +34,10 @@ class WeatherViewController: UIViewController {
 	}
 	
 	
-	private var dataSource: UITableViewDiffableDataSource<WeatherTableViewSection, Weather>! //dataSource
+	//MARK: - Storyboard Connections
+
+	@IBOutlet weak var weatherTableView: UITableView!
+	
 
 	//MARK: - View Lifecycle
 	
@@ -52,7 +52,7 @@ class WeatherViewController: UIViewController {
 	//MARK: - ViewController Configuration
 	
 	private func configureWeatherTableView() {
-		weatherTableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.reuseIdentifier)
+//		weatherTableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.reuseIdentifier)
 		weatherTableView.register(UINib(nibName: WeatherTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: WeatherTableViewCell.reuseIdentifier)
 		
 		weatherTableView.delegate = self
@@ -77,6 +77,7 @@ class WeatherViewController: UIViewController {
 			switch result {
 				case .success(let weather):
 					self.weather = weather
+				
 				case .failure(let error):
 					print(error.rawValue)
 			}

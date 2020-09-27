@@ -14,24 +14,13 @@ class CountriesTableViewCell: UITableViewCell {
 	static let reuseIdentifier = "CountriesTableViewCell"
 	static let nibName = "CountriesTableViewCell"
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-		
-    }
 	
+	//MARK: - Cell Configuration
 	
 	func setTableCellContent(for country: Country) {
-		let text = country.name.capitalizingFirstLetter()
-		self.textLabel?.text = text
+		self.textLabel?.text = country.name
 		
-		self.imageView?.image = getTableCellImage(for: country.name)
+//		self.imageView?.image = getTableCellImage(for: country.name)
 	}
 	
 	

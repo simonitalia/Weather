@@ -9,10 +9,19 @@ import UIKit
 
 class MainViewController: UIViewController {
 	
+	//MARK: Properties
+	
+	var weather: [Weather]?
+	
 	enum Identifier {
 		enum Segue {
 			static let mainVCToWeatherVC = "MainVCToWeatherVC"
-			static let mainVCToCountriesVC = "MainVCToCountriesVC"
+			static let mainVCToCountriesTableVC = "MainVCToCountriesTableVC"
+		}
+		
+		enum Storyboard {
+			static let weatherVC = "WeatherVC"
+			static let countriesNC = "CountriesNC"
 		}
 	}
 	
@@ -23,11 +32,8 @@ class MainViewController: UIViewController {
 		
 	}
 	
-	lazy var weather = [Weather]() {
-		didSet {
-			print("Countries set by childVC")
-		}
-	}
+	
+	//MARK: - View Lifecycle
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +59,21 @@ extension MainViewController: WeatherViewControllerDelegate {
 
 extension MainViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == Identifier.Segue.mainVCToWeatherVC {
-			let vc = segue.destination as! WeatherViewController
-			vc.delegate = self
+		
+		switch segue.identifier {
+			
+			case Identifier.Segue.mainVCToWeatherVC:
+				let vc = segue.destination as! WeatherViewController
+				vc.delegate = self
+				
+			case Identifier.Segue.mainVCToCountriesTableVC:
+				let vc = segue.destination as! CountriesTableViewController
+				guard let weather = weather else { return }
+				let countries = Countries(weather: weather)
+				vc.countries = countries.list
+
+			default:
+				fatalError()
 		}
 	}
 }

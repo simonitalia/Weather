@@ -16,20 +16,24 @@ class CountriesTableViewController: UITableViewController {
 	
 	
 	//MARK: - Class Properties
-	lazy var countries = [Country]()
+	var countries: [Country]?
 	
+	
+	//MARK: - View Lifecycle
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		configureWeatherTableView()
     }
 	
 	
 	//MARK: - ViewController Configuration
 	
 	private func configureWeatherTableView() {
-		countriesTableView.register(CountriesTableViewCell.self, forCellReuseIdentifier: CountriesTableViewCell.reuseIdentifier)
-		countriesTableView.register(UINib(nibName: CountriesTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: CountriesTableViewCell.reuseIdentifier)
+//		countriesTableView.register(CountriesTableViewCell.self, forCellReuseIdentifier: CountriesTableViewCell.reuseIdentifier)
+//		countriesTableView.register(UINib(nibName: CountriesTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: CountriesTableViewCell.reuseIdentifier)
+
+		countriesTableView.tableFooterView = UIView() //hides empty rows
 	}
 }
 
@@ -43,15 +47,19 @@ extension CountriesTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return countries.count
+		return countries?.count ?? 0
     }
  
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		
         let cell = tableView.dequeueReusableCell(withIdentifier: CountriesTableViewCell.reuseIdentifier, for: indexPath) as! CountriesTableViewCell
 		
-		let country = countries[indexPath.row]
-		cell.setTableCellContent(for: country)
-        return cell
+		if let countries = self.countries {
+			let country = countries[indexPath.row]
+			cell.setTableCellContent(for: country)
+		}
+		
+		return cell
     }
 }

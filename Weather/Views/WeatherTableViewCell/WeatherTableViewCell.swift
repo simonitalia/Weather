@@ -9,6 +9,8 @@ import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
 	
+	//MARK: - Properties
+	
 	enum Location: Int {
 		case name = 0
 		case condition
@@ -25,6 +27,8 @@ class WeatherTableViewCell: UITableViewCell {
 	@IBOutlet var labels: [UILabel]!
 	@IBOutlet weak var iconImageView: UIImageView!
 	
+	
+	//MARK: - Cell Configuration
 	
 	func setTableCellContent(for location: Weather) {
 		
