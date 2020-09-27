@@ -20,7 +20,7 @@ struct NetworkController {
 	
 	//MARK: - Network
 	
-	func getWeatherFeed(completion: @escaping (Result<[Venue], WError>) -> Void) {
+	func getWeatherFeed(completion: @escaping (Result<Venues, WError>) -> Void) {
 		guard let url = Endpoint.feed.url else {
 			fatalError("FeedError! Url is missing!") //can handle more gracefully
 		}
@@ -47,7 +47,7 @@ struct NetworkController {
 			do {
 				let decoder = JSONDecoder()
 				let feed = try decoder.decode(Feed.self, from: data)
-				let venues = feed.data
+				let venues = Venues(list: feed.data)
 				completion(.success(venues)) //pass data back
 				
 			} catch {

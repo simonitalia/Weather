@@ -8,11 +8,6 @@
 import UIKit
 
 
-protocol VenuesViewControllerDelegate {
-	func updateVenuesData(with venues: [Venue])
-}
-
-
 class VenuesViewController: UIViewController {
 	
 	//MARK: - Properties
@@ -21,15 +16,13 @@ class VenuesViewController: UIViewController {
 	   case main
 	}
 	
-	var delegate: VenuesViewControllerDelegate?
+	var mainVC: MainViewController?
 	
 	private var dataSource: UITableViewDiffableDataSource<VenuesTableViewSection, Venue>! //dataSource
 
-	lazy private var venues = [Venue]() {
+	private var venues: [Venue]! {
 		didSet {
 			updateUI()
-			delegate?.updateVenuesData(with: venues)
-				//update parent / mainVC data property
 		}
 	}
 	
@@ -45,7 +38,6 @@ class VenuesViewController: UIViewController {
 		super.viewDidLoad()
 		configureVenuesTableView()
 		configureVenuesTableViewCell()
-		fireGetWeatherFeed()
 	}
 	
 	
@@ -53,8 +45,8 @@ class VenuesViewController: UIViewController {
 	
 	private func configureVenuesTableView() {
 		venuesTableView.register(UINib(nibName: VenuesTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: VenuesTableViewCell.reuseIdentifier)
-		
-		venuesTableView.delegate = self
+	
+		mainVC?.delegate = self
 	}
 	
 	
@@ -68,21 +60,7 @@ class VenuesViewController: UIViewController {
 			return cell
 		})
 	}
-	
-	
-	private func fireGetWeatherFeed() {
-		NetworkController.shared.getWeatherFeed { [unowned self] result in
-			
-			switch result {
-				case .success(let venues):
-					self.venues = venues
-				
-				case .failure(let error):
-					print(error.rawValue)
-			}
-		}
-	}
-	
+
 	
 	//MARK: - UI
 	
@@ -97,6 +75,7 @@ class VenuesViewController: UIViewController {
 //MARK: - Venues TableView DataSource
 
 extension VenuesViewController {
+	
 	private func updateVenuesTableViewSnapshot() {
 		var snapshot = NSDiffableDataSourceSnapshot<VenuesTableViewSection, Venue>()
 		snapshot.appendSections([.main])
@@ -106,11 +85,11 @@ extension VenuesViewController {
 }
 
 
-//MARK: - Venues TableView Delegate
+//MARK: - MainViewControllerDelegate Delegate
 
-extension VenuesViewController: UITableViewDelegate {
+extension VenuesViewController: MainViewControllerDelegate {
 	
-	
-	
+	func updateVenuesDisplayed(with venues: [Venue]) {
+		self.venues = venues
+	}
 }
-

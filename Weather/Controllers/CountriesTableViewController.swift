@@ -7,6 +7,11 @@
 
 import UIKit
 
+
+protocol CountriesTableViewControllerDelegate {
+	func filterVenues(by country: Country)
+}
+
 class CountriesTableViewController: UITableViewController {
 	
 
@@ -15,9 +20,11 @@ class CountriesTableViewController: UITableViewController {
 	@IBOutlet var countriesTableView: UITableView!
 	
 	
-	//MARK: - Class Properties
+	//MARK: - Properties
 	var countries: [Country]?
-	
+	private var filterCountry: Country?
+	var delegate: CountriesTableViewControllerDelegate?
+
 	
 	//MARK: - View Lifecycle
 	
@@ -25,6 +32,14 @@ class CountriesTableViewController: UITableViewController {
         super.viewDidLoad()
 		configureCountriesTableView()
     }
+	
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		if let country = filterCountry {
+			delegate?.filterVenues(by: country)
+		}
+	}
 	
 	
 	//MARK: - ViewController Configuration
@@ -39,7 +54,6 @@ class CountriesTableViewController: UITableViewController {
 
 extension CountriesTableViewController {
 
-	
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -59,4 +73,17 @@ extension CountriesTableViewController {
 		
 		return cell
     }
+}
+
+
+//MARK: - TableView Delegate
+
+extension CountriesTableViewController {
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if let countries = self.countries {
+			let country = countries[indexPath.row]
+			filterCountry = country
+		}
+	}
 }

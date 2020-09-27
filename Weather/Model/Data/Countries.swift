@@ -10,13 +10,9 @@ import UIKit
 class Countries {
 	var list = [Country]()
 	
-	init(venues: [Venue]) {
-		venues.forEach( { (item) in
-			guard !list.contains(item.country) else { return }
-			list.append(item.country)
-		})
+	init(venues: Venues) {
+		list = venues.getUniqueCountries()
 	}
-	
 }
 
 
@@ -28,27 +24,28 @@ extension Countries {
 		case newZealand = "170"
 		case singapore = "194"
 		case unitedKingdom = "79"
-		
 	}
 
 	class func getFlagImage(for countryID: String) -> UIImage? {
-		switch countryID {
-			case Flag.australia.rawValue:
+		let id = Flag.init(rawValue: countryID)
+		
+		switch id {
+			case .australia:
 				return UIImage(named: "flag-australia")
 				   
-		   case Flag.hongKong.rawValue:
+			case .hongKong:
 				return UIImage(named: "flag-hong-kong")
-				   
-			case Flag.singapore.rawValue:
+
+			case .singapore:
 				return UIImage(named: "flag-singapore")
-			   
-		   case Flag.ireland.rawValue:
+
+		   case .ireland:
 				return UIImage(named: "flag-ireland")
-				   
-		   case Flag.newZealand.rawValue:
+
+		   case .newZealand:
 				return UIImage(named: "flag-new-zealand")
-				   
-			case Flag.unitedKingdom.rawValue:
+
+			case .unitedKingdom:
 				return UIImage(named: "flag-united-kingdom")
 				
 			default:

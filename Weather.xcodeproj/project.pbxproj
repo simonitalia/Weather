@@ -26,6 +26,7 @@
 		2ADF4A4E2520548D00ACF740 /* flag-ireland.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A492520548D00ACF740 /* flag-ireland.png */; };
 		2ADF4A4F2520548D00ACF740 /* flag-new-zealand.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A4A2520548D00ACF740 /* flag-new-zealand.png */; };
 		2ADF4A502520548D00ACF740 /* flag-singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A4B2520548D00ACF740 /* flag-singapore.png */; };
+		2ADF4A6125208A4100ACF740 /* Venues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A6025208A4100ACF740 /* Venues.swift */; };
 		2AFCD3BD251DE2D9003CDA70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCD3BC251DE2D9003CDA70 /* AppDelegate.swift */; };
 		2AFCD3BF251DE2D9003CDA70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCD3BE251DE2D9003CDA70 /* SceneDelegate.swift */; };
 		2AFCD3C1251DE2D9003CDA70 /* VenuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCD3C0251DE2D9003CDA70 /* VenuesViewController.swift */; };
@@ -54,6 +55,7 @@
 		2ADF4A492520548D00ACF740 /* flag-ireland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-ireland.png"; sourceTree = "<group>"; };
 		2ADF4A4A2520548D00ACF740 /* flag-new-zealand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-new-zealand.png"; sourceTree = "<group>"; };
 		2ADF4A4B2520548D00ACF740 /* flag-singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-singapore.png"; sourceTree = "<group>"; };
+		2ADF4A6025208A4100ACF740 /* Venues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venues.swift; sourceTree = "<group>"; };
 		2AFCD3B9251DE2D9003CDA70 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AFCD3BC251DE2D9003CDA70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AFCD3BE251DE2D9003CDA70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		2ADF4A362520252100ACF740 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				2ADF4A6025208A4100ACF740 /* Venues.swift */,
 				2ADF4A382520255000ACF740 /* Countries.swift */,
 			);
 			path = Data;
@@ -318,6 +321,7 @@
 				2AFCD3BD251DE2D9003CDA70 /* AppDelegate.swift in Sources */,
 				2AFCD3BF251DE2D9003CDA70 /* SceneDelegate.swift in Sources */,
 				2ADF4A09251ED73400ACF740 /* Venue.swift in Sources */,
+				2ADF4A6125208A4100ACF740 /* Venues.swift in Sources */,
 				2ADF4A392520255000ACF740 /* Countries.swift in Sources */,
 				2ADF4A30251F488200ACF740 /* CountriesTableViewController.swift in Sources */,
 			);

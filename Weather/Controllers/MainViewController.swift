@@ -7,11 +7,32 @@
 
 import UIKit
 
+protocol MainViewControllerDelegate {
+	func updateVenuesDisplayed(with venues: [Venue])
+}
+
+
 class MainViewController: UIViewController {
 	
 	//MARK: Properties
 	
-	var venues: [Venue]?
+	var delegate: MainViewControllerDelegate?
+	
+	//all venues fethed from remote server
+	private var allVenues: Venues? {
+		didSet {
+			venuesDisplayed = allVenues?.list
+		}
+	}
+	
+	//venues diplayed on VenuesTableVC
+	private var venuesDisplayed: [Venue]? {
+		didSet {
+			guard let venues = venuesDisplayed else { return }
+			delegate?.updateVenuesDisplayed(with: venues)
+		}
+	}
+	
 	
 	private enum Identifier {
 		enum Segue {
@@ -25,43 +46,58 @@ class MainViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		configureVC()
+		fireGetWeatherFeed()
+		
     }
 	
 	
-	private func configureVC() {
-		
+	private func fireGetWeatherFeed() {
+		NetworkController.shared.getWeatherFeed { [unowned self] result in
+			
+			switch result {
+				case .success(let venues):
+					self.allVenues = venues
+				
+				case .failure(let error):
+					print(error.rawValue)
+			}
+		}
 	}
-    
 }
 
-//MARK: - VenuesViewControllerDelegate
-
-extension MainViewController: VenuesViewControllerDelegate {
-	func updateVenuesData(with venues: [Venue]) {
-		self.venues = venues
-	}
-}
 
 //MARK: - Navigation
 
 extension MainViewController {
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		
 		switch segue.identifier {
 			
 			case Identifier.Segue.mainVCToVenuesVC:
 				let vc = segue.destination as! VenuesViewController
-				vc.delegate = self
+				vc.mainVC = self
 				
 			case Identifier.Segue.mainVCToCountriesTableVC:
 				let vc = segue.destination as! CountriesTableViewController
-				guard let venues = venues else { return }
-				let countries = Countries(venues: venues)
-				vc.countries = countries.list
+				let countries = allVenues?.getUniqueCountries()
+				vc.countries = countries
+				vc.delegate = self
 
 			default:
 				break
 		}
 	}
 }
+
+
+//MARK: - CountriesTableViewController Delegate
+
+extension MainViewController: CountriesTableViewControllerDelegate {
+	
+	func filterVenues(by country: Country) {
+		let filterdVenues = allVenues?.filterList(by: country)
+		venuesDisplayed = filterdVenues
+	}
+}
+
