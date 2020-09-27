@@ -17,10 +17,15 @@
 		2ADF4A20251EF4ED00ACF740 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A1E251EF4ED00ACF740 /* WeatherTableViewCell.xib */; };
 		2ADF4A23251EF5F900ACF740 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A22251EF5F900ACF740 /* MainViewController.swift */; };
 		2ADF4A2C251F47BA00ACF740 /* CountriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A2A251F47BA00ACF740 /* CountriesTableViewCell.swift */; };
-		2ADF4A2D251F47BA00ACF740 /* CountriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A2B251F47BA00ACF740 /* CountriesTableViewCell.xib */; };
 		2ADF4A30251F488200ACF740 /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A2F251F488200ACF740 /* CountriesTableViewController.swift */; };
 		2ADF4A34251F53B600ACF740 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A33251F53B600ACF740 /* String+Extensions.swift */; };
 		2ADF4A392520255000ACF740 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A382520255000ACF740 /* Countries.swift */; };
+		2ADF4A4425204F8100ACF740 /* flag-australia.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A4325204F8100ACF740 /* flag-australia.png */; };
+		2ADF4A4C2520548D00ACF740 /* flag-united-kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A472520548D00ACF740 /* flag-united-kingdom.png */; };
+		2ADF4A4D2520548D00ACF740 /* flag-hong-kong.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A482520548D00ACF740 /* flag-hong-kong.png */; };
+		2ADF4A4E2520548D00ACF740 /* flag-ireland.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A492520548D00ACF740 /* flag-ireland.png */; };
+		2ADF4A4F2520548D00ACF740 /* flag-new-zealand.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A4A2520548D00ACF740 /* flag-new-zealand.png */; };
+		2ADF4A502520548D00ACF740 /* flag-singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A4B2520548D00ACF740 /* flag-singapore.png */; };
 		2AFCD3BD251DE2D9003CDA70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCD3BC251DE2D9003CDA70 /* AppDelegate.swift */; };
 		2AFCD3BF251DE2D9003CDA70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCD3BE251DE2D9003CDA70 /* SceneDelegate.swift */; };
 		2AFCD3C1251DE2D9003CDA70 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCD3C0251DE2D9003CDA70 /* WeatherViewController.swift */; };
@@ -40,10 +45,15 @@
 		2ADF4A1E251EF4ED00ACF740 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 		2ADF4A22251EF5F900ACF740 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2ADF4A2A251F47BA00ACF740 /* CountriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewCell.swift; sourceTree = "<group>"; };
-		2ADF4A2B251F47BA00ACF740 /* CountriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountriesTableViewCell.xib; sourceTree = "<group>"; };
 		2ADF4A2F251F488200ACF740 /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewController.swift; sourceTree = "<group>"; };
 		2ADF4A33251F53B600ACF740 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		2ADF4A382520255000ACF740 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		2ADF4A4325204F8100ACF740 /* flag-australia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-australia.png"; sourceTree = "<group>"; };
+		2ADF4A472520548D00ACF740 /* flag-united-kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-united-kingdom.png"; sourceTree = "<group>"; };
+		2ADF4A482520548D00ACF740 /* flag-hong-kong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-hong-kong.png"; sourceTree = "<group>"; };
+		2ADF4A492520548D00ACF740 /* flag-ireland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-ireland.png"; sourceTree = "<group>"; };
+		2ADF4A4A2520548D00ACF740 /* flag-new-zealand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-new-zealand.png"; sourceTree = "<group>"; };
+		2ADF4A4B2520548D00ACF740 /* flag-singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-singapore.png"; sourceTree = "<group>"; };
 		2AFCD3B9251DE2D9003CDA70 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AFCD3BC251DE2D9003CDA70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AFCD3BE251DE2D9003CDA70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				2ADF4A2A251F47BA00ACF740 /* CountriesTableViewCell.swift */,
-				2ADF4A2B251F47BA00ACF740 /* CountriesTableViewCell.xib */,
 			);
 			path = CountriesTableViewCell;
 			sourceTree = "<group>";
@@ -177,6 +186,12 @@
 			isa = PBXGroup;
 			children = (
 				2AFCD3C5251DE2DC003CDA70 /* Assets.xcassets */,
+				2ADF4A4325204F8100ACF740 /* flag-australia.png */,
+				2ADF4A482520548D00ACF740 /* flag-hong-kong.png */,
+				2ADF4A492520548D00ACF740 /* flag-ireland.png */,
+				2ADF4A4A2520548D00ACF740 /* flag-new-zealand.png */,
+				2ADF4A4B2520548D00ACF740 /* flag-singapore.png */,
+				2ADF4A472520548D00ACF740 /* flag-united-kingdom.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -271,10 +286,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ADF4A20251EF4ED00ACF740 /* WeatherTableViewCell.xib in Resources */,
+				2ADF4A502520548D00ACF740 /* flag-singapore.png in Resources */,
 				2AFCD3C9251DE2DC003CDA70 /* LaunchScreen.storyboard in Resources */,
 				2AFCD3C6251DE2DC003CDA70 /* Assets.xcassets in Resources */,
 				2AFCD3C4251DE2D9003CDA70 /* Main.storyboard in Resources */,
-				2ADF4A2D251F47BA00ACF740 /* CountriesTableViewCell.xib in Resources */,
+				2ADF4A4D2520548D00ACF740 /* flag-hong-kong.png in Resources */,
+				2ADF4A4425204F8100ACF740 /* flag-australia.png in Resources */,
+				2ADF4A4E2520548D00ACF740 /* flag-ireland.png in Resources */,
+				2ADF4A4F2520548D00ACF740 /* flag-new-zealand.png in Resources */,
+				2ADF4A4C2520548D00ACF740 /* flag-united-kingdom.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

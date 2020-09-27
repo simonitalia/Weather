@@ -52,7 +52,6 @@ class WeatherViewController: UIViewController {
 	//MARK: - ViewController Configuration
 	
 	private func configureWeatherTableView() {
-//		weatherTableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.reuseIdentifier)
 		weatherTableView.register(UINib(nibName: WeatherTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: WeatherTableViewCell.reuseIdentifier)
 		
 		weatherTableView.delegate = self
@@ -65,7 +64,7 @@ class WeatherViewController: UIViewController {
 		
 			let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.reuseIdentifier, for: indexPath) as? WeatherTableViewCell
 			
-			cell?.setTableCellContent(for: location)
+			cell?.setContent(for: location)
 			return cell
 		})
 	}

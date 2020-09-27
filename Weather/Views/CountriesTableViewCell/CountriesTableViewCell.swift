@@ -9,23 +9,17 @@ import UIKit
 
 class CountriesTableViewCell: UITableViewCell {
 	
+	
 	//MARK: - Accessible Cell identifiers
 	
 	static let reuseIdentifier = "CountriesTableViewCell"
 	static let nibName = "CountriesTableViewCell"
-
 	
+
 	//MARK: - Cell Configuration
 	
-	func setTableCellContent(for country: Country) {
-		self.textLabel?.text = country.name
-		
-//		self.imageView?.image = getTableCellImage(for: country.name)
+	func setContent(with country: Country) {
+		textLabel?.text = country.name
+		imageView?.image = Countries.getFlagImage(for: country.countryID)
 	}
-	
-	
-	private func getTableCellImage(for countryName: String) -> UIImage? {
-		return UIImage()
-	}
-	
 }

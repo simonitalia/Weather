@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
 	
 	var weather: [Weather]?
 	
-	enum Identifier {
+	private enum Identifier {
 		enum Segue {
 			static let mainVCToWeatherVC = "MainVCToWeatherVC"
 			static let mainVCToCountriesTableVC = "MainVCToCountriesTableVC"
@@ -73,7 +73,7 @@ extension MainViewController {
 				vc.countries = countries.list
 
 			default:
-				fatalError()
+				break
 		}
 	}
 }

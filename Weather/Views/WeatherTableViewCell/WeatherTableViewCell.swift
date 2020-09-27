@@ -30,7 +30,7 @@ class WeatherTableViewCell: UITableViewCell {
 	
 	//MARK: - Cell Configuration
 	
-	func setTableCellContent(for location: Weather) {
+	func setContent(for location: Weather) {
 		
 		labels.forEach {
 			switch $0.tag {
@@ -44,7 +44,7 @@ class WeatherTableViewCell: UITableViewCell {
 					$0.text = location.temperature ?? "?"
 				
 				default:
-					fatalError("Tag should Should not be none")
+					break
 			}
 		}
 	}

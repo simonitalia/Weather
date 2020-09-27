@@ -30,15 +30,13 @@ class CountriesTableViewController: UITableViewController {
 	//MARK: - ViewController Configuration
 	
 	private func configureWeatherTableView() {
-//		countriesTableView.register(CountriesTableViewCell.self, forCellReuseIdentifier: CountriesTableViewCell.reuseIdentifier)
-//		countriesTableView.register(UINib(nibName: CountriesTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: CountriesTableViewCell.reuseIdentifier)
-
 		countriesTableView.tableFooterView = UIView() //hides empty rows
 	}
 }
 
 
 // MARK: - Table view DataSource
+
 extension CountriesTableViewController {
 
 	
@@ -50,14 +48,13 @@ extension CountriesTableViewController {
 		return countries?.count ?? 0
     }
  
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
         let cell = tableView.dequeueReusableCell(withIdentifier: CountriesTableViewCell.reuseIdentifier, for: indexPath) as! CountriesTableViewCell
 		
 		if let countries = self.countries {
 			let country = countries[indexPath.row]
-			cell.setTableCellContent(for: country)
+			cell.setContent(with: country)
 		}
 		
 		return cell
