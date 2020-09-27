@@ -23,19 +23,19 @@ class CountriesTableViewController: UITableViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		configureWeatherTableView()
+		configureCountriesTableView()
     }
 	
 	
 	//MARK: - ViewController Configuration
 	
-	private func configureWeatherTableView() {
+	private func configureCountriesTableView() {
 		countriesTableView.tableFooterView = UIView() //hides empty rows
 	}
 }
 
 
-// MARK: - Table view DataSource
+// MARK: - TableView DataSource
 
 extension CountriesTableViewController {
 

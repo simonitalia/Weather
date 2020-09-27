@@ -11,7 +11,7 @@ import Foundation
 struct Feed: Codable {
 	let result: Bool
 	let status: Bool
-	let data: [Weather]
+	let data: [Venue]
 	
 	enum CodingKeys: String, CodingKey {
 		case result = "ret"

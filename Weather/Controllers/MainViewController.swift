@@ -11,28 +11,16 @@ class MainViewController: UIViewController {
 	
 	//MARK: Properties
 	
-	var weather: [Weather]?
+	var venues: [Venue]?
 	
 	private enum Identifier {
 		enum Segue {
-			static let mainVCToWeatherVC = "MainVCToWeatherVC"
+			static let mainVCToVenuesVC = "MainVCToVenuesVC"
 			static let mainVCToCountriesTableVC = "MainVCToCountriesTableVC"
 		}
-		
-		enum Storyboard {
-			static let weatherVC = "WeatherVC"
-			static let countriesNC = "CountriesNC"
-		}
 	}
 	
-	
-	//MARK: - Storyboard Outlets
-	
-	@IBAction func filterButtonTapped(_ sender: Any) {
-		
-	}
-	
-	
+
 	//MARK: - View Lifecycle
 	
     override func viewDidLoad() {
@@ -47,11 +35,11 @@ class MainViewController: UIViewController {
     
 }
 
-//MARK: - WeatherViewControllerDelegate
+//MARK: - VenuesViewControllerDelegate
 
-extension MainViewController: WeatherViewControllerDelegate {
-	func updateWeatherData(with weather: [Weather]) {
-		self.weather = weather
+extension MainViewController: VenuesViewControllerDelegate {
+	func updateVenuesData(with venues: [Venue]) {
+		self.venues = venues
 	}
 }
 
@@ -62,14 +50,14 @@ extension MainViewController {
 		
 		switch segue.identifier {
 			
-			case Identifier.Segue.mainVCToWeatherVC:
-				let vc = segue.destination as! WeatherViewController
+			case Identifier.Segue.mainVCToVenuesVC:
+				let vc = segue.destination as! VenuesViewController
 				vc.delegate = self
 				
 			case Identifier.Segue.mainVCToCountriesTableVC:
 				let vc = segue.destination as! CountriesTableViewController
-				guard let weather = weather else { return }
-				let countries = Countries(weather: weather)
+				guard let venues = venues else { return }
+				let countries = Countries(venues: venues)
 				vc.countries = countries.list
 
 			default:

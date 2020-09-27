@@ -1,5 +1,5 @@
 //
-//  WeatherTableViewCell.swift
+//  VenuesTableViewCell.swift
 //  Weather
 //
 //  Created by Simon Italia on 9/26/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeatherTableViewCell: UITableViewCell {
+class VenuesTableViewCell: UITableViewCell {
 	
 	//MARK: - Properties
 	
@@ -19,8 +19,8 @@ class WeatherTableViewCell: UITableViewCell {
 	
 	//MARK: - Accessible Cell identifiers
 	
-	static let reuseIdentifier = "WeatherTableViewCell"
-	static let nibName = "WeatherTableViewCell"
+	static let reuseIdentifier = "VenuesTableViewCell"
+	static let nibName = "VenuesTableViewCell"
 	
 	//MARK: - Cell Outlets
 	
@@ -30,7 +30,7 @@ class WeatherTableViewCell: UITableViewCell {
 	
 	//MARK: - Cell Configuration
 	
-	func setContent(for location: Weather) {
+	func setContent(for location: Venue) {
 		
 		labels.forEach {
 			switch $0.tag {

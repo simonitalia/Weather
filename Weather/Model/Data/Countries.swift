@@ -10,8 +10,8 @@ import UIKit
 class Countries {
 	var list = [Country]()
 	
-	init(weather: [Weather]) {
-		weather.forEach( { (item) in
+	init(venues: [Venue]) {
+		venues.forEach( { (item) in
 			guard !list.contains(item.country) else { return }
 			list.append(item.country)
 		})
@@ -24,9 +24,9 @@ extension Countries {
 	private enum Flag: String {
 		case australia = "16"
 		case hongKong = "96"
-		case singapore = "106"
-		case ireland = "170"
-		case newZealand = "194"
+		case ireland = "106"
+		case newZealand = "170"
+		case singapore = "194"
 		case unitedKingdom = "79"
 		
 	}

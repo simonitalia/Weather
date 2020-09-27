@@ -1,5 +1,5 @@
 //
-//  Weather.swift
+//  Venue.swift
 //  Weather
 //
 //  Created by Simon Italia on 9/26/20.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-//MARK: - Weather Object
-struct Weather: Codable, Hashable {
+//MARK: - Venue Object
+struct Venue: Codable, Hashable {
 	let venueID: String
 	let name: String
 	let country: Country

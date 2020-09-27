@@ -20,7 +20,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qdm-Ml-glC">
                                 <rect key="frame" x="10" y="88" width="394" height="714"/>
                                 <connections>
-                                    <segue destination="Ti8-l3-oEu" kind="embed" identifier="MainVCToWeatherVC" id="FAA-5W-f3K"/>
+                                    <segue destination="Ti8-l3-oEu" kind="embed" identifier="MainVCToVenuesVC" id="FAA-5W-f3K"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-eu-W7Z">
@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="613" y="244"/>
         </scene>
-        <!--Weather View Controller-->
+        <!--Venues View Controller-->
         <scene sceneID="7mX-bX-j9e">
             <objects>
-                <viewController id="Ti8-l3-oEu" customClass="WeatherViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ti8-l3-oEu" customClass="VenuesViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bwb-KW-afa">
                         <rect key="frame" x="0.0" y="0.0" width="394" height="714"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,7 +96,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="394" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" id="UCm-5e-nnm" customClass="WeatherTableViewCell" customModule="Weather" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" id="UCm-5e-nnm" customClass="VenuesTableViewCell" customModule="Weather" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UCm-5e-nnm" id="s0x-TJ-wvP">
@@ -117,7 +117,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="weatherTableView" destination="MJC-Yq-srf" id="xus-7o-wN2"/>
+                        <outlet property="venuesTableView" destination="MJC-Yq-srf" id="xus-7o-wN2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fC8-fa-iA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
