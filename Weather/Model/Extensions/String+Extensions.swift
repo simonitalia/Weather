@@ -16,4 +16,8 @@ extension String {
 	mutating func capitalizeFirstLetter() {
 		self = self.capitalizingFirstLetter()
 	}
+	
+	func convertToInt() -> Int {
+		return Int(self) ?? 0
+	}
 }

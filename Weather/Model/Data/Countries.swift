@@ -11,7 +11,7 @@ class Countries {
 	var list = [Country]()
 	
 	init(venues: Venues) {
-		list = venues.getUniqueCountries()
+		list = venues.uniqueCountries()
 	}
 }
 
@@ -32,19 +32,19 @@ extension Countries {
 		switch id {
 			case .australia:
 				return UIImage(named: "flag-australia")
-				   
+				
 			case .hongKong:
 				return UIImage(named: "flag-hong-kong")
-
+				
 			case .singapore:
 				return UIImage(named: "flag-singapore")
-
+				
 		   case .ireland:
 				return UIImage(named: "flag-ireland")
-
+			
 		   case .newZealand:
 				return UIImage(named: "flag-new-zealand")
-
+			
 			case .unitedKingdom:
 				return UIImage(named: "flag-united-kingdom")
 				

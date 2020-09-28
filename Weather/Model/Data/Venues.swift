@@ -18,6 +18,13 @@ struct Venues {
 
 extension Venues {
 	
+	enum SortKey: Int {
+		case name = 0
+		case temperature
+		case lastUpdated
+	}
+	
+	
 	func filterList(by country: Country) -> [Venue] {
 		var filteredVenues = [Venue]()
 		list.forEach {
@@ -30,7 +37,7 @@ extension Venues {
 	}
 	
 	
-	func getUniqueCountries() -> [Country] {
+	func uniqueCountries() -> [Country] {
 		var countries = [Country]()
 		
 		self.list.forEach( { (item) in
@@ -39,5 +46,24 @@ extension Venues {
 		})
 		
 		return countries
+	}
+	
+	static func sortedVenues(list: [Venue], using sortKey: SortKey) -> [Venue] {
+	
+		var sortedList = list
+		
+		switch sortKey  {
+			case .name  :
+				sortedList.sort { ($0.name) < ($1.name) }
+
+			case .temperature:
+				sortedList.sort {
+					($0.temperature?.convertToInt() ?? 0) > ($1.temperature?.convertToInt() ?? 0) }
+				
+			case .lastUpdated:
+				sortedList.sort { ($0.lastUpdated ?? 0) > ($1.lastUpdated ?? 0) }
+		}
+		
+		return sortedList
 	}
 }

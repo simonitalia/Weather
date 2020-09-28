@@ -28,6 +28,7 @@
 		2ADF4A502520548D00ACF740 /* flag-singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A4B2520548D00ACF740 /* flag-singapore.png */; };
 		2ADF4A6125208A4100ACF740 /* Venues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A6025208A4100ACF740 /* Venues.swift */; };
 		2ADF4A662520BF0F00ACF740 /* WButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A652520BF0F00ACF740 /* WButton.swift */; };
+		2ADF4A6C2521692F00ACF740 /* WSortByButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A6B2521692F00ACF740 /* WSortByButton.swift */; };
 		2AFCD3BD251DE2D9003CDA70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCD3BC251DE2D9003CDA70 /* AppDelegate.swift */; };
 		2AFCD3BF251DE2D9003CDA70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCD3BE251DE2D9003CDA70 /* SceneDelegate.swift */; };
 		2AFCD3C1251DE2D9003CDA70 /* VenuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFCD3C0251DE2D9003CDA70 /* VenuesViewController.swift */; };
@@ -58,6 +59,7 @@
 		2ADF4A4B2520548D00ACF740 /* flag-singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-singapore.png"; sourceTree = "<group>"; };
 		2ADF4A6025208A4100ACF740 /* Venues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venues.swift; sourceTree = "<group>"; };
 		2ADF4A652520BF0F00ACF740 /* WButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WButton.swift; sourceTree = "<group>"; };
+		2ADF4A6B2521692F00ACF740 /* WSortByButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSortByButton.swift; sourceTree = "<group>"; };
 		2AFCD3B9251DE2D9003CDA70 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AFCD3BC251DE2D9003CDA70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AFCD3BE251DE2D9003CDA70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				2ADF4A652520BF0F00ACF740 /* WButton.swift */,
+				2ADF4A6B2521692F00ACF740 /* WSortByButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			files = (
 				2ADF4A1F251EF4ED00ACF740 /* VenuesTableViewCell.swift in Sources */,
 				2ADF4A23251EF5F900ACF740 /* MainViewController.swift in Sources */,
+				2ADF4A6C2521692F00ACF740 /* WSortByButton.swift in Sources */,
 				2ADF4A662520BF0F00ACF740 /* WButton.swift in Sources */,
 				2ADF4A2C251F47BA00ACF740 /* CountriesTableViewCell.swift in Sources */,
 				2ADF49FB251EBF1B00ACF740 /* NetworkController.swift in Sources */,

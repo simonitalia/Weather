@@ -17,10 +17,8 @@ class VenuesViewController: UIViewController {
 	}
 	
 	var mainVC: MainViewController?
-	
-	private var dataSource: UITableViewDiffableDataSource<VenuesTableViewSection, Venue>! //dataSource
-
-	private var venues: [Venue]! {
+	private var dataSource: UITableViewDiffableDataSource<VenuesTableViewSection, Venue>? //dataSource
+	private var venues: [Venue]? {
 		didSet {
 			updateUI()
 		}
@@ -75,10 +73,11 @@ class VenuesViewController: UIViewController {
 
 extension VenuesViewController {
 	private func updateVenuesTableViewSnapshot() {
+		guard let venues = self.venues else { return }
 		var snapshot = NSDiffableDataSourceSnapshot<VenuesTableViewSection, Venue>()
 		snapshot.appendSections([.main])
-		snapshot.appendItems(self.venues)
-		self.dataSource.apply(snapshot, animatingDifferences: true, completion: nil)
+		snapshot.appendItems(venues)
+		self.dataSource?.apply(snapshot, animatingDifferences: true, completion: nil)
 	}
 }
 

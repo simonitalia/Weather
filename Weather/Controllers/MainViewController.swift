@@ -14,24 +14,51 @@ protocol MainViewControllerDelegate {
 
 class MainViewController: UIViewController {
 	
-	//MARK: - Storyboard Outlets
-	@IBOutlet weak var filterButton: WButton!
-	
-	@IBAction func filterButtonTapped(_ sender: Any) {
-		presentCountriesViewController()
+	private enum Identifier {
+		enum Segue {
+			static let mainVCToVenuesVC = "MainVCToVenuesVC"
+		}
+		
+		enum Storyboard {
+			static let countriesTableVC = "CountriesTableVC"
+		}
 	}
+	
+	//MARK: - Storyboard Connections
 	
 	@IBAction func refreshBarButtonTapped(_ sender: UIBarButtonItem) {
 		fireGetWeatherFeed()
 	}
 	
+	@IBOutlet var sortByButtons: [WSortByButton]!
+	@IBAction func sortByButtonTapped(_ sender: WSortByButton) {
+		guard let venues = venuesDisplayed else { return }
+		
+		switch sender.tag {
+			case 0:
+				self.venuesDisplayed = Venues.sortedVenues(list: venues, using: .name)
+			
+			case 1:
+				self.venuesDisplayed = Venues.sortedVenues(list: venues, using: .temperature)
+				
+			case 2:
+				self.venuesDisplayed = Venues.sortedVenues(list: venues, using: .lastUpdated)
+			default:
+				break
+		}
+	}
+	
+	@IBOutlet weak var filterButton: WButton!
+	@IBAction func filterButtonTapped(_ sender: Any) {
+		presentCountriesViewController()
+	}
 	
 	
 	//MARK: Properties
 	
 	var delegate: MainViewControllerDelegate?
 	
-	//all venues fethed from remote server
+	//all venues fetched from remote server
 	private var allVenues: Venues? {
 		didSet {
 			venuesDisplayed = allVenues?.list
@@ -48,23 +75,13 @@ class MainViewController: UIViewController {
 	}
 	
 	
-	private enum Identifier {
-		enum Segue {
-			static let mainVCToVenuesVC = "MainVCToVenuesVC"
-		}
-		
-		enum Storyboard {
-			static let countriesTableVC = "CountriesTableVC"
-		}
-	}
-	
-
 	//MARK: - View Lifecycle
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		configureNavigationBar()
 		fireGetWeatherFeed()
+		configureSortByButtons()
     }
 	
 	
@@ -76,7 +93,7 @@ class MainViewController: UIViewController {
 			switch result {
 				case .success(let venues):
 					self.allVenues = venues
-				
+					
 				case .failure(let error):
 					print(error.rawValue)
 			}
@@ -84,10 +101,15 @@ class MainViewController: UIViewController {
 	}
 	
 	
-	//MARK: UI Configuration
+	//MARK: - UI Configuration
 	
 	private func configureNavigationBar() {
 		title = "Weather"
+	}
+	
+	
+	private func configureSortByButtons() {
+		sortByButtons.forEach { ($0.setButtonText(for: $0)) }
 	}
 	
 
@@ -117,7 +139,7 @@ extension MainViewController {
 	private func presentCountriesViewController() {
 		if let vc = storyboard?.instantiateViewController(withIdentifier: Identifier.Storyboard.countriesTableVC) as? CountriesTableViewController {
 			
-			let countries = allVenues?.getUniqueCountries()
+			let countries = allVenues?.uniqueCountries()
 			vc.countries = countries
 			vc.delegate = self
 			
