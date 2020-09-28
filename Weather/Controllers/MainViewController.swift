@@ -89,7 +89,7 @@ class MainViewController: UIViewController {
 	
 	//MARK: - ViewController Configuration
 	
-	private func fireGetWeatherFeed() {
+	@objc private func fireGetWeatherFeed() {
 		enableUserInteraction(false)
 		activitySpinner.animateSpinner(true)
 		
@@ -103,7 +103,7 @@ class MainViewController: UIViewController {
 					self.allVenues = venues
 					
 				case .failure(let error):
-					print(error.rawValue)
+					self.presentAlert(title: "We had a problem!", message: error.rawValue, completionHandler: #selector(self.fireGetWeatherFeed))
 			}
 		}
 	}
