@@ -17,6 +17,10 @@ class VenuesTableViewCell: UITableViewCell {
 		case temperature
 	}
 	
+	private enum Conditions {
+		
+	}
+	
 	
 	//MARK: - Accessible Cell identifiers
 	
@@ -47,6 +51,38 @@ class VenuesTableViewCell: UITableViewCell {
 				default:
 					break
 			}
+			
+			iconImageView?.image = getImage(for: venue.conditionIcon)
+		}
+	}
+	
+	
+	private func getImage(for conditionIcon: String?) -> UIImage? {
+		
+		switch conditionIcon {
+			case "clear":
+				return UIImage(named: Constants.ImageAsset.ConditionIcon.clear)
+			
+			case "fog":
+				return UIImage(named: Constants.ImageAsset.ConditionIcon.fog)
+				
+			case "hazy":
+				return UIImage(named: Constants.ImageAsset.ConditionIcon.hazy)
+				
+			case "mostlycloudy":
+				return UIImage(named: Constants.ImageAsset.ConditionIcon.mostlyCloudy)
+				
+			case "partlycloudy":
+				return UIImage(named: Constants.ImageAsset.ConditionIcon.partlyCloudy)
+			
+			case "rain":
+				return UIImage(named: Constants.ImageAsset.ConditionIcon.rain)
+				
+			case "tstorms":
+				return UIImage(named: Constants.ImageAsset.ConditionIcon.thunderStorms)
+			
+			default:
+				return nil
 		}
 	}
 }

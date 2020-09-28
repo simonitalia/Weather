@@ -10,6 +10,7 @@
 		2AB0CC972521B4D800BC1F8A /* WActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0CC962521B4D800BC1F8A /* WActivityIndicatorView.swift */; };
 		2AB0CCA02521C3D200BC1F8A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0CC9F2521C3D200BC1F8A /* UIViewController+Extensions.swift */; };
 		2AB0CCA32521CC1000BC1F8A /* VenueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0CCA22521CC1000BC1F8A /* VenueDetailsViewController.swift */; };
+		2AB0CCAB252205E500BC1F8A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0CCAA252205E500BC1F8A /* Constants.swift */; };
 		2ADF49FB251EBF1B00ACF740 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF49FA251EBF1B00ACF740 /* NetworkController.swift */; };
 		2ADF4A00251EC12300ACF740 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF49FF251EC12300ACF740 /* Feed.swift */; };
 		2ADF4A05251ED2DE00ACF740 /* WError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A04251ED2DE00ACF740 /* WError.swift */; };
@@ -23,12 +24,6 @@
 		2ADF4A30251F488200ACF740 /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A2F251F488200ACF740 /* CountriesTableViewController.swift */; };
 		2ADF4A34251F53B600ACF740 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A33251F53B600ACF740 /* String+Extensions.swift */; };
 		2ADF4A392520255000ACF740 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A382520255000ACF740 /* Countries.swift */; };
-		2ADF4A4425204F8100ACF740 /* flag-australia.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A4325204F8100ACF740 /* flag-australia.png */; };
-		2ADF4A4C2520548D00ACF740 /* flag-united-kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A472520548D00ACF740 /* flag-united-kingdom.png */; };
-		2ADF4A4D2520548D00ACF740 /* flag-hong-kong.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A482520548D00ACF740 /* flag-hong-kong.png */; };
-		2ADF4A4E2520548D00ACF740 /* flag-ireland.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A492520548D00ACF740 /* flag-ireland.png */; };
-		2ADF4A4F2520548D00ACF740 /* flag-new-zealand.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A4A2520548D00ACF740 /* flag-new-zealand.png */; };
-		2ADF4A502520548D00ACF740 /* flag-singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADF4A4B2520548D00ACF740 /* flag-singapore.png */; };
 		2ADF4A6125208A4100ACF740 /* Venues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A6025208A4100ACF740 /* Venues.swift */; };
 		2ADF4A662520BF0F00ACF740 /* WFilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A652520BF0F00ACF740 /* WFilterButton.swift */; };
 		2ADF4A6C2521692F00ACF740 /* WSortByButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A6B2521692F00ACF740 /* WSortByButton.swift */; };
@@ -44,6 +39,7 @@
 		2AB0CC962521B4D800BC1F8A /* WActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WActivityIndicatorView.swift; sourceTree = "<group>"; };
 		2AB0CC9F2521C3D200BC1F8A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		2AB0CCA22521CC1000BC1F8A /* VenueDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsViewController.swift; sourceTree = "<group>"; };
+		2AB0CCAA252205E500BC1F8A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2ADF49FA251EBF1B00ACF740 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		2ADF49FF251EC12300ACF740 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		2ADF4A04251ED2DE00ACF740 /* WError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WError.swift; sourceTree = "<group>"; };
@@ -57,12 +53,6 @@
 		2ADF4A2F251F488200ACF740 /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewController.swift; sourceTree = "<group>"; };
 		2ADF4A33251F53B600ACF740 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		2ADF4A382520255000ACF740 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
-		2ADF4A4325204F8100ACF740 /* flag-australia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-australia.png"; sourceTree = "<group>"; };
-		2ADF4A472520548D00ACF740 /* flag-united-kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-united-kingdom.png"; sourceTree = "<group>"; };
-		2ADF4A482520548D00ACF740 /* flag-hong-kong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-hong-kong.png"; sourceTree = "<group>"; };
-		2ADF4A492520548D00ACF740 /* flag-ireland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-ireland.png"; sourceTree = "<group>"; };
-		2ADF4A4A2520548D00ACF740 /* flag-new-zealand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-new-zealand.png"; sourceTree = "<group>"; };
-		2ADF4A4B2520548D00ACF740 /* flag-singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag-singapore.png"; sourceTree = "<group>"; };
 		2ADF4A6025208A4100ACF740 /* Venues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venues.swift; sourceTree = "<group>"; };
 		2ADF4A652520BF0F00ACF740 /* WFilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WFilterButton.swift; sourceTree = "<group>"; };
 		2ADF4A6B2521692F00ACF740 /* WSortByButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSortByButton.swift; sourceTree = "<group>"; };
@@ -161,6 +151,7 @@
 			children = (
 				2ADF4A6025208A4100ACF740 /* Venues.swift */,
 				2ADF4A382520255000ACF740 /* Countries.swift */,
+				2AB0CCAA252205E500BC1F8A /* Constants.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -224,12 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				2AFCD3C5251DE2DC003CDA70 /* Assets.xcassets */,
-				2ADF4A4325204F8100ACF740 /* flag-australia.png */,
-				2ADF4A482520548D00ACF740 /* flag-hong-kong.png */,
-				2ADF4A492520548D00ACF740 /* flag-ireland.png */,
-				2ADF4A4A2520548D00ACF740 /* flag-new-zealand.png */,
-				2ADF4A4B2520548D00ACF740 /* flag-singapore.png */,
-				2ADF4A472520548D00ACF740 /* flag-united-kingdom.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -328,15 +313,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ADF4A20251EF4ED00ACF740 /* VenuesTableViewCell.xib in Resources */,
-				2ADF4A502520548D00ACF740 /* flag-singapore.png in Resources */,
 				2AFCD3C9251DE2DC003CDA70 /* LaunchScreen.storyboard in Resources */,
 				2AFCD3C6251DE2DC003CDA70 /* Assets.xcassets in Resources */,
 				2AFCD3C4251DE2D9003CDA70 /* Main.storyboard in Resources */,
-				2ADF4A4D2520548D00ACF740 /* flag-hong-kong.png in Resources */,
-				2ADF4A4425204F8100ACF740 /* flag-australia.png in Resources */,
-				2ADF4A4E2520548D00ACF740 /* flag-ireland.png in Resources */,
-				2ADF4A4F2520548D00ACF740 /* flag-new-zealand.png in Resources */,
-				2ADF4A4C2520548D00ACF740 /* flag-united-kingdom.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ADF4A1F251EF4ED00ACF740 /* VenuesTableViewCell.swift in Sources */,
+				2AB0CCAB252205E500BC1F8A /* Constants.swift in Sources */,
 				2ADF4A23251EF5F900ACF740 /* MainViewController.swift in Sources */,
 				2ADF4A6C2521692F00ACF740 /* WSortByButton.swift in Sources */,
 				2ADF4A662520BF0F00ACF740 /* WFilterButton.swift in Sources */,
