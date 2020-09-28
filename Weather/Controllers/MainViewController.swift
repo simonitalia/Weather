@@ -24,8 +24,10 @@ class MainViewController: UIViewController {
 		}
 	}
 	
+	
 	//MARK: - Storyboard Connections
 	
+	@IBOutlet weak var activitySpinner: WActivityIndicatorView!
 	@IBAction func refreshBarButtonTapped(_ sender: UIBarButtonItem) {
 		fireGetWeatherFeed()
 	}
@@ -48,7 +50,7 @@ class MainViewController: UIViewController {
 		}
 	}
 	
-	@IBOutlet weak var filterButton: WButton!
+	@IBOutlet weak var filterButton: WFilterButton!
 	@IBAction func filterButtonTapped(_ sender: Any) {
 		presentCountriesViewController()
 	}
@@ -88,7 +90,13 @@ class MainViewController: UIViewController {
 	//MARK: - ViewController Configuration
 	
 	private func fireGetWeatherFeed() {
+		enableUserInteraction(false)
+		activitySpinner.animateSpinner(true)
+		
 		NetworkController.shared.getWeatherFeed { [unowned self] result in
+			
+			self.activitySpinner.animateSpinner(false)
+			self.enableUserInteraction(true)
 			
 			switch result {
 				case .success(let venues):
@@ -103,11 +111,18 @@ class MainViewController: UIViewController {
 	
 	//MARK: - UI Configuration
 	
+	private func enableUserInteraction(_ bool: Bool) {
+		DispatchQueue.main.async { [unowned self] in
+			self.view.isUserInteractionEnabled = bool
+		}
+	}
+	
+	
 	private func configureNavigationBar() {
 		title = "Weather"
 	}
 	
-	
+
 	private func configureSortByButtons() {
 		sortByButtons.forEach { ($0.setButtonText(for: $0)) }
 	}

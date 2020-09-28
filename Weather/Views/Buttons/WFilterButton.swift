@@ -7,11 +7,26 @@
 
 import UIKit
 
-class WButton: UIButton {
+class WFilterButton: UIButton {
 	
 	private enum Text: String {
 		case all = "Filter: All"
 		case filtered = "Filter: "
+	}
+	
+
+	override func awakeFromNib() {
+		configureButton()
+	}
+	
+	
+	private func configureButton() {
+		setDefaultButtonText()
+	}
+	
+	
+	private func setDefaultButtonText() {
+		setTitle(Text.all.rawValue, for: .normal)
 	}
 	
 	
@@ -21,7 +36,7 @@ class WButton: UIButton {
 			setTitle(Text.filtered.rawValue + text, for: .normal)
 			
 		} else {
-			setTitle(Text.all.rawValue, for: .normal)
+			setDefaultButtonText()
 		}
 	}
 }
