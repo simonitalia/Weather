@@ -16,6 +16,12 @@ class VenuesViewController: UIViewController {
 	   case main
 	}
 	
+	private enum Identifier {
+		enum Storyboard {
+			static let venueDetailsVC = "VenueDetailsVC"
+		}
+	}
+	
 	var mainVC: MainViewController?
 	private var dataSource: UITableViewDiffableDataSource<VenuesTableViewSection, Venue>? //dataSource
 	private var venues: [Venue]? {
@@ -45,6 +51,7 @@ class VenuesViewController: UIViewController {
 		venuesTableView.register(UINib(nibName: VenuesTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: VenuesTableViewCell.reuseIdentifier)
 	
 		mainVC?.delegate = self
+		venuesTableView.delegate = self
 	}
 	
 	
@@ -87,5 +94,35 @@ extension VenuesViewController {
 extension VenuesViewController: MainViewControllerDelegate {
 	func updateVenuesDisplayed(with venues: [Venue]) {
 		self.venues = venues
+	}
+}
+
+//MARK: - VenuesViewController TableViewDelegate
+
+extension VenuesViewController: UITableViewDelegate {
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		guard let venues = self.venues else { return }
+		
+		let venue = venues[indexPath.row]
+		presentVenueDetailsViewController(passingObject: venue)
+	}
+	
+}
+
+
+//MARK: - Navigation
+
+extension VenuesViewController {
+	private func presentVenueDetailsViewController(passingObject venue: Venue) {
+		//setup destinationVC
+		let vc = self.storyboard?.instantiateViewController(withIdentifier: Identifier.Storyboard.venueDetailsVC) as! VenueDetailsViewController
+		vc.venue = venue
+		
+		
+		let nc = UINavigationController(rootViewController: vc)
+		nc.modalPresentationStyle = .fullScreen
+		
+		present(nc, animated: true, completion: nil)
 	}
 }

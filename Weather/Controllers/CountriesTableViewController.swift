@@ -89,7 +89,8 @@ extension CountriesTableViewController {
 	}
 }
 
-//MARK: Navigation
+
+//MARK: - Navigation
 
 extension CountriesTableViewController {
 	@objc func dismissVC() {

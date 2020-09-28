@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2AB0CC972521B4D800BC1F8A /* WActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0CC962521B4D800BC1F8A /* WActivityIndicatorView.swift */; };
 		2AB0CCA02521C3D200BC1F8A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0CC9F2521C3D200BC1F8A /* UIViewController+Extensions.swift */; };
+		2AB0CCA32521CC1000BC1F8A /* VenueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB0CCA22521CC1000BC1F8A /* VenueDetailsViewController.swift */; };
 		2ADF49FB251EBF1B00ACF740 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF49FA251EBF1B00ACF740 /* NetworkController.swift */; };
 		2ADF4A00251EC12300ACF740 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF49FF251EC12300ACF740 /* Feed.swift */; };
 		2ADF4A05251ED2DE00ACF740 /* WError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF4A04251ED2DE00ACF740 /* WError.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		2AB0CC962521B4D800BC1F8A /* WActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WActivityIndicatorView.swift; sourceTree = "<group>"; };
 		2AB0CC9F2521C3D200BC1F8A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		2AB0CCA22521CC1000BC1F8A /* VenueDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsViewController.swift; sourceTree = "<group>"; };
 		2ADF49FA251EBF1B00ACF740 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		2ADF49FF251EC12300ACF740 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		2ADF4A04251ED2DE00ACF740 /* WError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WError.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				2ADF4A22251EF5F900ACF740 /* MainViewController.swift */,
 				2AFCD3C0251DE2D9003CDA70 /* VenuesViewController.swift */,
+				2AB0CCA22521CC1000BC1F8A /* VenueDetailsViewController.swift */,
 				2ADF4A2F251F488200ACF740 /* CountriesTableViewController.swift */,
 				2AB0CC9E2521C35E00BC1F8A /* Extensions */,
 			);
@@ -359,6 +362,7 @@
 				2AB0CCA02521C3D200BC1F8A /* UIViewController+Extensions.swift in Sources */,
 				2AFCD3BD251DE2D9003CDA70 /* AppDelegate.swift in Sources */,
 				2AFCD3BF251DE2D9003CDA70 /* SceneDelegate.swift in Sources */,
+				2AB0CCA32521CC1000BC1F8A /* VenueDetailsViewController.swift in Sources */,
 				2ADF4A09251ED73400ACF740 /* Venue.swift in Sources */,
 				2AB0CC972521B4D800BC1F8A /* WActivityIndicatorView.swift in Sources */,
 				2ADF4A6125208A4100ACF740 /* Venues.swift in Sources */,
