@@ -26,7 +26,7 @@ class VenuesTableViewCell: UITableViewCell {
 	
 	//MARK: - Cell NIB Connections
 	
-	@IBOutlet var labels: [UILabel]!
+	@IBOutlet var labels: [WLabel]!
 	@IBOutlet weak var iconImageView: UIImageView!
 	
 	
@@ -46,12 +46,15 @@ class VenuesTableViewCell: UITableViewCell {
 		labels.forEach {
 			switch $0.tag {
 				case VenueLocation.name.rawValue:
+//					$0.setText(with: venue.name)
 					$0.text = venue.name
-					
+				
 				case VenueLocation.condition.rawValue:
+//					$0.setText(with: venue.condition ?? "-")
 					$0.text = venue.condition ?? "-"
 					
 				case VenueLocation.temperature.rawValue:
+//					$0.setText(with: venue.temperature ?? "-")
 					$0.text = venue.temperature ?? "-"
 				
 				default:

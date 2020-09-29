@@ -87,9 +87,9 @@ class VenueDetailsViewController: UIViewController {
 					label.text = venue.wind
 				case .lastUpdated:
 					if let lastUpdated = venue.lastUpdated {
-						label.text = "\(lastUpdated)"
+						label.text = "Last updated: \(lastUpdated.convertToDateString())"
 					} else {
-						label.text = "-"
+						label.text = "Last updated: unknown"
 					}
 				default:
 					break
