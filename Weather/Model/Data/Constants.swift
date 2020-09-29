@@ -30,6 +30,8 @@ struct Constants {
 			static let thunderStorms = "conditionIcon-tstorms"
 		}
 		
+		static let defaultImage = "no-image"
+		
 		
 		case flag(id: String)
 		case conditionIcon(named: String)
@@ -50,8 +52,9 @@ struct Constants {
 						return AssetType.CountryFlag.singapore
 					case "79":
 						return AssetType.CountryFlag.unitedKingdom
+					
 					default:
-						break
+						return AssetType.defaultImage
 				}
 				
 				case .conditionIcon(let name):
@@ -71,10 +74,9 @@ struct Constants {
 					case "tstorm":
 						return AssetType.ConditionIcon.thunderStorms
 					default:
-						break
+						return AssetType.defaultImage
 				}
 			}
-			return nil
 		}
 		
 		var image: UIImage? {
@@ -87,10 +89,10 @@ struct Constants {
 			
 			switch assetType {
 				case .flag(let id):
-					return  AssetType.flag(id: id).image
+					return AssetType.flag(id: id).image
 					
 				case .conditionIcon(let name):
-					return  AssetType.conditionIcon(named: name).image
+					return AssetType.conditionIcon(named: name).image
 			}
 		}
 	}

@@ -54,7 +54,11 @@ class VenueDetailsViewController: UIViewController {
 	
 	
 	private func configureImageView() {
-		guard let icon = venue?.conditionIcon else { return }
+		guard let icon = venue?.conditionIcon else {
+			conditionImageView.image = UIImage(named: Constants.AssetType.defaultImage)
+			return
+		}
+		
 		let image = Constants.AssetType.getImage(for: .conditionIcon(named: icon))
 		conditionImageView.image = image
 	}

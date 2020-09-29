@@ -63,6 +63,8 @@ class VenuesTableViewCell: UITableViewCell {
 			
 			if let conditionIcon = venue.conditionIcon {
 				iconImageView?.image = getImage(for: conditionIcon)
+			} else {
+				iconImageView.image = UIImage(named: Constants.AssetType.defaultImage)
 			}
 		}
 	}
