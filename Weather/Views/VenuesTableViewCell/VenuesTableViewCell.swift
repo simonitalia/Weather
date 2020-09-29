@@ -67,25 +67,25 @@ class VenuesTableViewCell: UITableViewCell {
 		
 		switch conditionIcon {
 			case "clear":
-				return UIImage(named: Constants.ImageAsset.ConditionIcon.clear)
+				return UIImage(named: Constants.AssetType.ConditionIcon.clear)
 			
 			case "fog":
-				return UIImage(named: Constants.ImageAsset.ConditionIcon.fog)
+				return UIImage(named: Constants.AssetType.ConditionIcon.fog)
 				
 			case "hazy":
-				return UIImage(named: Constants.ImageAsset.ConditionIcon.hazy)
+				return UIImage(named: Constants.AssetType.ConditionIcon.hazy)
 				
 			case "mostlycloudy":
-				return UIImage(named: Constants.ImageAsset.ConditionIcon.mostlyCloudy)
+				return UIImage(named: Constants.AssetType.ConditionIcon.mostlyCloudy)
 				
 			case "partlycloudy":
-				return UIImage(named: Constants.ImageAsset.ConditionIcon.partlyCloudy)
+				return UIImage(named: Constants.AssetType.ConditionIcon.partlyCloudy)
 			
 			case "rain":
-				return UIImage(named: Constants.ImageAsset.ConditionIcon.rain)
+				return UIImage(named: Constants.AssetType.ConditionIcon.rain)
 				
 			case "tstorms":
-				return UIImage(named: Constants.ImageAsset.ConditionIcon.thunderStorms)
+				return UIImage(named: Constants.AssetType.ConditionIcon.thunderStorms)
 			
 			default:
 				return nil

@@ -31,22 +31,22 @@ extension Countries {
 		
 		switch id {
 			case .australia:
-				return UIImage(named: Constants.ImageAsset.Flag.australia)
+				return UIImage(named: Constants.AssetType.Flag.australia)
 				
 			case .hongKong:
-				return UIImage(named: Constants.ImageAsset.Flag.hongKong)
+				return UIImage(named: Constants.AssetType.Flag.hongKong)
 				
 			case .ireland:
-				 return UIImage(named: Constants.ImageAsset.Flag.ireland)
+				 return UIImage(named: Constants.AssetType.Flag.ireland)
 				
 		   case .newZealand:
-				return UIImage(named: Constants.ImageAsset.Flag.newZealand)
+				return UIImage(named: Constants.AssetType.Flag.newZealand)
 			
 			case .unitedKingdom:
-				return UIImage(named: Constants.ImageAsset.Flag.unitedKingdom)
+				return UIImage(named: Constants.AssetType.Flag.unitedKingdom)
 				
 			case .singapore:
-				return UIImage(named: Constants.ImageAsset.Flag.singapore)
+				return UIImage(named: Constants.AssetType.Flag.singapore)
 				
 			default:
 				return nil
