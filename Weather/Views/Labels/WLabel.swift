@@ -13,7 +13,6 @@ class WLabel: UILabel {
 		configureLabel()
 	}
 
-	//MARK: - Label Configuration
 	
 	func configureLabel() {
 		adjustsFontSizeToFitWidth = true

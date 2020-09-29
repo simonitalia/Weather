@@ -13,11 +13,13 @@ class WActivityIndicatorView: UIActivityIndicatorView {
 		configureSpinner()
 	}
 
+	
 	private func configureSpinner() {
 		self.color = .gray
 		self.style = .large
 		self.isHidden = true
 	}
+	
 	
 	func animateSpinner(_ bool: Bool) {
 		DispatchQueue.main.async { [weak self] in
