@@ -17,17 +17,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="359" height="94"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YRm-qL-wns">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YRm-qL-wns">
                         <rect key="frame" x="10" y="10" width="41.5" height="74"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCn-GO-fgM" customClass="WLabel" customModule="Weather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="41.5" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCn-GO-fgM" customClass="WLabelTitleTwo" customModule="Weather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="41.5" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtV-6C-rjB" customClass="WLabel" customModule="Weather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="42" width="41.5" height="32"/>
+                                <rect key="frame" x="0.0" y="37" width="41.5" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                                     <constraint firstAttribute="width" secondItem="4Ng-ab-mZ5" secondAttribute="height" multiplier="1:1" id="6MB-6n-eUd"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvk-Lg-Ov3" customClass="WLabel" customModule="Weather" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvk-Lg-Ov3" customClass="WLabelLargeTitle" customModule="Weather" customModuleProvider="target">
                                 <rect key="frame" x="79" y="0.0" width="74" height="74"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -63,10 +63,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="iconImageView" destination="4Ng-ab-mZ5" id="pk1-Dn-k6N"/>
-                <outletCollection property="labels" destination="ZCn-GO-fgM" collectionClass="NSMutableArray" id="wQZ-t0-Tka"/>
-                <outletCollection property="labels" destination="VtV-6C-rjB" collectionClass="NSMutableArray" id="bdy-Km-qsE"/>
-                <outletCollection property="labels" destination="Jvk-Lg-Ov3" collectionClass="NSMutableArray" id="24x-ZI-5ZT"/>
+                <outlet property="cellImageView" destination="4Ng-ab-mZ5" id="pk1-Dn-k6N"/>
+                <outletCollection property="cellLabels" destination="ZCn-GO-fgM" collectionClass="NSMutableArray" id="wQZ-t0-Tka"/>
+                <outletCollection property="cellLabels" destination="VtV-6C-rjB" collectionClass="NSMutableArray" id="bdy-Km-qsE"/>
+                <outletCollection property="cellLabels" destination="Jvk-Lg-Ov3" collectionClass="NSMutableArray" id="24x-ZI-5ZT"/>
             </connections>
             <point key="canvasLocation" x="-154" y="55"/>
         </tableViewCell>

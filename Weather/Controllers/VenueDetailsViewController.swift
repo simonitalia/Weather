@@ -86,9 +86,9 @@ class VenueDetailsViewController: UIViewController {
 				case .feelsLike:
 					label.text = venue.feelsLike
 				case .humidity:
-					label.text = venue.humidity
+					label.text = venue.humidity?.dropPrefix("Humidity: ")
 				case .wind:
-					label.text = venue.wind
+					label.text = venue.wind?.dropPrefix("Wind: ")
 				case .lastUpdated:
 					if let lastUpdated = venue.lastUpdated {
 						label.text = "Last updated: \(lastUpdated.convertToDateString())"

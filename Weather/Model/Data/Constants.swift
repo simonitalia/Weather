@@ -52,7 +52,6 @@ struct Constants {
 						return AssetType.CountryFlag.singapore
 					case "79":
 						return AssetType.CountryFlag.unitedKingdom
-					
 					default:
 						return AssetType.defaultImage
 				}

@@ -44,6 +44,8 @@ class CountriesTableViewController: UITableViewController {
 	
 	
 	private func configureCountriesTableView() {
+		countriesTableView.register(UINib(nibName: CountriesTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: CountriesTableViewCell.reuseIdentifier)
+		
 		countriesTableView.tableFooterView = UIView() //hides empty rows
 	}
 }

@@ -32,8 +32,8 @@ class MainViewController: UIViewController {
 		fireGetWeatherFeed()
 	}
 	
-	@IBOutlet var sortByButtons: [WSortByButton]!
-	@IBAction func sortByButtonTapped(_ sender: WSortByButton) {
+	@IBOutlet var sortByButtons: [WButtonSortBy]!
+	@IBAction func sortByButtonTapped(_ sender: WButtonSortBy) {
 		
 		var sortedVenues = [Venue]()
 		
@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
 	}
 	
 	
-	@IBOutlet weak var filterButton: WFilterButton!
+	@IBOutlet weak var filterButton: WButtonFilter!
 	@IBAction func filterButtonTapped(_ sender: Any) {
 		presentCountriesViewController()
 	}

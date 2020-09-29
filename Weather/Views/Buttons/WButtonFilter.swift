@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WFilterButton: UIButton {
+class WButtonFilter: WButton {
 	
 	private enum Text: String {
 		case all = "Filter: All"
@@ -20,7 +20,8 @@ class WFilterButton: UIButton {
 	}
 	
 	
-	private func configureButton() {
+	override func configureButton() {
+		super.configureButton()
 		setDefaultButtonText()
 	}
 	

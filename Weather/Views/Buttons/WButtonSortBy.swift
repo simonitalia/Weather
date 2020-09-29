@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WSortByButton: UIButton {
+class WButtonSortBy: WButton {
 	
 	private enum SortType: String {
 		case venueName = "A-Z"
@@ -16,7 +16,18 @@ class WSortByButton: UIButton {
 	}
 	
 	
-	func setButtonText(for button: WSortByButton) {
+	override func awakeFromNib() {
+		configureButton()
+	}
+	
+	
+	override func configureButton() {
+		super.configureButton()
+		layer.cornerRadius = 5
+	}
+	
+	
+	func setButtonText(for button: WButtonSortBy) {
 		switch button.tag {
 			case 0:
 				button.setTitle(SortType.venueName.rawValue, for: .normal)

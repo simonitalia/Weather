@@ -9,8 +9,16 @@ import UIKit
 
 class WLabel: UILabel {
 	
-//	func setText(with text: String) {
-//		self.text = text
-//
-//	}
+	override func awakeFromNib() {
+		configureLabel()
+	}
+
+	//MARK: - Label Configuration
+	
+	func configureLabel() {
+		adjustsFontSizeToFitWidth = true
+		font = UIFont.preferredFont(forTextStyle: .body)
+		textColor = .lightGray
+		textAlignment = .left
+	}
 }

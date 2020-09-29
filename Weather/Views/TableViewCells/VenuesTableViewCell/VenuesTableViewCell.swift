@@ -21,13 +21,13 @@ class VenuesTableViewCell: UITableViewCell {
 	//MARK: - Accessible Cell identifiers
 	
 	static let reuseIdentifier = "VenuesTableViewCell"
-	static let nibName = "VenuesTableViewCell"
+	static let nibName = reuseIdentifier
 	
 	
 	//MARK: - Cell NIB Connections
 	
-	@IBOutlet var labels: [WLabel]!
-	@IBOutlet weak var iconImageView: UIImageView!
+	@IBOutlet var cellLabels: [UILabel]!
+	@IBOutlet weak var cellImageView: UIImageView!
 	
 	
 	//MARK: - Cell Configuration
@@ -43,18 +43,15 @@ class VenuesTableViewCell: UITableViewCell {
 	
 	
 	func setContent(for venue: Venue) {
-		labels.forEach {
+		cellLabels.forEach {
 			switch $0.tag {
 				case VenueLocation.name.rawValue:
-//					$0.setText(with: venue.name)
 					$0.text = venue.name
 				
 				case VenueLocation.condition.rawValue:
-//					$0.setText(with: venue.condition ?? "-")
 					$0.text = venue.condition ?? "-"
 					
 				case VenueLocation.temperature.rawValue:
-//					$0.setText(with: venue.temperature ?? "-")
 					$0.text = venue.temperature ?? "-"
 				
 				default:
@@ -62,9 +59,9 @@ class VenuesTableViewCell: UITableViewCell {
 			}
 			
 			if let conditionIcon = venue.conditionIcon {
-				iconImageView?.image = getImage(for: conditionIcon)
+				cellImageView?.image = getImage(for: conditionIcon)
 			} else {
-				iconImageView.image = UIImage(named: Constants.AssetType.defaultImage)
+				cellImageView.image = UIImage(named: Constants.AssetType.defaultImage)
 			}
 		}
 	}

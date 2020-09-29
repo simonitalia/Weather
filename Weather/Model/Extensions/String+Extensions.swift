@@ -20,4 +20,9 @@ extension String {
 	func convertToInt() -> Int {
 		return Int(self) ?? 0
 	}
+	
+	func dropPrefix(_ prefix: String) -> String {
+		guard self.hasPrefix(prefix) else { return self }
+		return String(self.dropFirst(prefix.count))
+	}
 }

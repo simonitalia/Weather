@@ -10,10 +10,16 @@ import UIKit
 class CountriesTableViewCell: UITableViewCell {
 	
 	
+	//MARK: - Cell NIB Connections
+	
+	@IBOutlet weak var cellLabel: UILabel!
+	@IBOutlet weak var cellImageView: UIImageView!
+	
+	
 	//MARK: - Accessible Cell identifiers
 	
 	static let reuseIdentifier = "CountriesTableViewCell"
-	static let nibName = "CountriesTableViewCell"
+	static let nibName = reuseIdentifier
 	
 
 	//MARK: - Cell Configuration
@@ -29,8 +35,8 @@ class CountriesTableViewCell: UITableViewCell {
 	
 	
 	func setContent(with country: Country) {
-		textLabel?.text = country.name
+		cellLabel?.text = country.name
 		let image = Constants.AssetType.getImage(for: .flag(id: country.countryID))
-		imageView?.image = image
+		cellImageView?.image = image
 	}
 }

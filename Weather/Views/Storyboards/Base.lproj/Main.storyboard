@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="46Y-Rc-Dvr">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -14,28 +14,28 @@
             <objects>
                 <viewController id="ICz-Ai-0HF" customClass="MainViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HhJ-eb-xfs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FCv-xt-vSs">
-                                <rect key="frame" x="20" y="108" width="374" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FCv-xt-vSs">
+                                <rect key="frame" x="20" y="64" width="335" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzX-he-XH7" customClass="WSortByButton" customModule="Weather" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzX-he-XH7" customClass="WButtonSortBy" customModule="Weather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="45"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="sortByButtonTapped:" destination="ICz-Ai-0HF" eventType="touchUpInside" id="xF1-Fl-cec"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2i-37-QUf" customClass="WSortByButton" customModule="Weather" customModuleProvider="target">
-                                        <rect key="frame" x="131.5" y="0.0" width="111" height="40"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2i-37-QUf" customClass="WButtonSortBy" customModule="Weather" customModuleProvider="target">
+                                        <rect key="frame" x="115" y="0.0" width="105" height="45"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="sortByButtonTapped:" destination="ICz-Ai-0HF" eventType="touchUpInside" id="o1i-dt-eDf"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tx6-c8-iO0" customClass="WSortByButton" customModule="Weather" customModuleProvider="target">
-                                        <rect key="frame" x="262.5" y="0.0" width="111.5" height="40"/>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tx6-c8-iO0" customClass="WButtonSortBy" customModule="Weather" customModuleProvider="target">
+                                        <rect key="frame" x="230" y="0.0" width="105" height="45"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="sortByButtonTapped:" destination="ICz-Ai-0HF" eventType="touchUpInside" id="ukB-6H-a41"/>
@@ -43,17 +43,17 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="RPJ-5f-Rzy"/>
+                                    <constraint firstAttribute="height" constant="45" id="RPJ-5f-Rzy"/>
                                 </constraints>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qdm-Ml-glC">
-                                <rect key="frame" x="20" y="158" width="374" height="644"/>
+                                <rect key="frame" x="20" y="119" width="335" height="478"/>
                                 <connections>
                                     <segue destination="Ti8-l3-oEu" kind="embed" identifier="MainVCToVenuesVC" id="FAA-5W-f3K"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-eu-W7Z" customClass="WFilterButton" customModule="Weather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-eu-W7Z" customClass="WButtonFilter" customModule="Weather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2KM-Hp-H9h"/>
                                 </constraints>
@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Wgw-AV-qfI" customClass="WActivityIndicatorView" customModule="Weather" customModuleProvider="target">
-                                <rect key="frame" x="197" y="465" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="345.5" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iz8-uA-t6w"/>
@@ -76,7 +76,7 @@
                             <constraint firstItem="FCv-xt-vSs" firstAttribute="top" secondItem="iz8-uA-t6w" secondAttribute="top" constant="20" id="OIL-w0-c8U"/>
                             <constraint firstItem="Qdm-Ml-glC" firstAttribute="leading" secondItem="iz8-uA-t6w" secondAttribute="leading" constant="20" id="RdH-rw-937"/>
                             <constraint firstItem="iz8-uA-t6w" firstAttribute="trailing" secondItem="dJp-eu-W7Z" secondAttribute="trailing" id="Wci-cG-iab"/>
-                            <constraint firstItem="dJp-eu-W7Z" firstAttribute="top" secondItem="Qdm-Ml-glC" secondAttribute="bottom" constant="10" id="Wyc-PN-Pmc"/>
+                            <constraint firstItem="dJp-eu-W7Z" firstAttribute="top" secondItem="Qdm-Ml-glC" secondAttribute="bottom" constant="20" id="Wyc-PN-Pmc"/>
                             <constraint firstItem="iz8-uA-t6w" firstAttribute="trailing" secondItem="Qdm-Ml-glC" secondAttribute="trailing" constant="20" id="pvw-nR-Xlf"/>
                             <constraint firstItem="dJp-eu-W7Z" firstAttribute="leading" secondItem="iz8-uA-t6w" secondAttribute="leading" id="sKD-FJ-IhO"/>
                             <constraint firstItem="iz8-uA-t6w" firstAttribute="trailing" secondItem="FCv-xt-vSs" secondAttribute="trailing" constant="20" id="vbK-d5-Vaw"/>
@@ -107,15 +107,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="CountriesTableVC" id="EMz-ls-vO6" customClass="CountriesTableViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Pdi-Q6-i5I">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountriesTableViewCell" id="Msb-S9-8EO" customClass="CountriesTableViewCell" customModule="Weather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Msb-S9-8EO" id="FEM-4y-pYN">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -139,89 +139,90 @@
             <objects>
                 <viewController storyboardIdentifier="VenueDetailsVC" id="vyC-jU-fUF" customClass="VenueDetailsViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hGK-wK-MhE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WJ1-ie-Aac">
-                                <rect key="frame" x="0.0" y="94" width="414" height="100"/>
+                                <rect key="frame" x="137.5" y="50" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="HeQ-hG-9Y2"/>
+                                    <constraint firstAttribute="width" constant="100" id="p8e-CW-swy"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="mdE-iF-1QS">
-                                <rect key="frame" x="20" y="244" width="374" height="51"/>
+                                <rect key="frame" x="30" y="200" width="315" height="46"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dN5-i8-rCf">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="51"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dN5-i8-rCf">
+                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="46"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpk-Lz-dya">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpk-Lz-dya" customClass="WLabelTitleTwo" customModule="Weather" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKi-22-QOw">
-                                                <rect key="frame" x="0.0" y="30.5" width="187" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKi-22-QOw" customClass="WLabel" customModule="Weather" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="25.5" width="157.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsp-py-39l">
-                                        <rect key="frame" x="187" y="0.0" width="187" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsp-py-39l" customClass="WLabelLargeTitle" customModule="Weather" customModuleProvider="target">
+                                        <rect key="frame" x="157.5" y="0.0" width="157.5" height="46"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="nsp-py-39l" firstAttribute="height" secondItem="dN5-i8-rCf" secondAttribute="height" multiplier="0.401961" id="Msr-Ju-QkT"/>
+                                    <constraint firstItem="nsp-py-39l" firstAttribute="height" secondItem="dN5-i8-rCf" secondAttribute="height" id="Msr-Ju-QkT"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CD1-Qc-FzW">
-                                <rect key="frame" x="20" y="345" width="374" height="51"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="CD1-Qc-FzW">
+                                <rect key="frame" x="30" y="271" width="315" height="41"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="qfJ-BL-O8a">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qfJ-BL-O8a">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIN-lB-1L6">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIN-lB-1L6" customClass="WLabelTitleThree" customModule="Weather" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HG2-DE-EZ2">
-                                                <rect key="frame" x="166.5" y="0.0" width="41.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HG2-DE-EZ2" customClass="WLabelTitleThree" customModule="Weather" customModuleProvider="target">
+                                                <rect key="frame" x="137" y="0.0" width="41.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zv7-0A-Cen">
-                                                <rect key="frame" x="332.5" y="0.0" width="41.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zv7-0A-Cen" customClass="WLabelTitleThree" customModule="Weather" customModuleProvider="target">
+                                                <rect key="frame" x="273.5" y="0.0" width="41.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="K6q-9s-Ll8">
-                                        <rect key="frame" x="0.0" y="30.5" width="374" height="20.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="K6q-9s-Ll8">
+                                        <rect key="frame" x="0.0" y="20.5" width="315" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVJ-bF-r78">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVJ-bF-r78" customClass="WLabelSubheadline" customModule="Weather" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSa-Zd-qQG">
-                                                <rect key="frame" x="166.5" y="0.0" width="41.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSa-Zd-qQG" customClass="WLabelSubheadline" customModule="Weather" customModuleProvider="target">
+                                                <rect key="frame" x="137" y="0.0" width="41.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwu-N8-4SZ">
-                                                <rect key="frame" x="332.5" y="0.0" width="41.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwu-N8-4SZ" customClass="WLabelSubheadline" customModule="Weather" customModuleProvider="target">
+                                                <rect key="frame" x="273.5" y="0.0" width="41.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -230,8 +231,11 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3D-Lq-pox">
-                                <rect key="frame" x="20" y="416" width="374" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3D-Lq-pox" customClass="WLabelSubheadline" customModule="Weather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="597" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PqF-Ca-Zyk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -240,18 +244,17 @@
                         <viewLayoutGuide key="safeArea" id="8hi-Fo-egW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="CD1-Qc-FzW" firstAttribute="top" secondItem="mdE-iF-1QS" secondAttribute="bottom" constant="50" id="Dhp-aO-p3J"/>
+                            <constraint firstItem="CD1-Qc-FzW" firstAttribute="top" secondItem="mdE-iF-1QS" secondAttribute="bottom" constant="25" id="Dhp-aO-p3J"/>
                             <constraint firstItem="8hi-Fo-egW" firstAttribute="trailing" secondItem="l3D-Lq-pox" secondAttribute="trailing" constant="20" id="NQh-Bx-EoC"/>
                             <constraint firstItem="l3D-Lq-pox" firstAttribute="leading" secondItem="8hi-Fo-egW" secondAttribute="leading" constant="20" id="OFV-Il-hXq"/>
-                            <constraint firstItem="CD1-Qc-FzW" firstAttribute="leading" secondItem="8hi-Fo-egW" secondAttribute="leading" constant="20" id="RQ9-nV-fMX"/>
-                            <constraint firstItem="8hi-Fo-egW" firstAttribute="trailing" secondItem="mdE-iF-1QS" secondAttribute="trailing" constant="20" id="Zbe-rA-BlW"/>
-                            <constraint firstItem="l3D-Lq-pox" firstAttribute="top" secondItem="CD1-Qc-FzW" secondAttribute="bottom" constant="20" id="ZsY-Kp-G7b"/>
+                            <constraint firstItem="CD1-Qc-FzW" firstAttribute="leading" secondItem="8hi-Fo-egW" secondAttribute="leading" constant="30" id="RQ9-nV-fMX"/>
+                            <constraint firstItem="8hi-Fo-egW" firstAttribute="bottom" secondItem="l3D-Lq-pox" secondAttribute="bottom" constant="20" id="WcR-wI-N2A"/>
+                            <constraint firstItem="8hi-Fo-egW" firstAttribute="trailing" secondItem="mdE-iF-1QS" secondAttribute="trailing" constant="30" id="Zbe-rA-BlW"/>
                             <constraint firstItem="mdE-iF-1QS" firstAttribute="top" secondItem="WJ1-ie-Aac" secondAttribute="bottom" constant="50" id="a0r-WG-yqe"/>
+                            <constraint firstItem="WJ1-ie-Aac" firstAttribute="centerX" secondItem="8hi-Fo-egW" secondAttribute="centerX" id="aVD-vc-ZvU"/>
                             <constraint firstItem="WJ1-ie-Aac" firstAttribute="top" secondItem="8hi-Fo-egW" secondAttribute="top" constant="50" id="dxC-aR-6j9"/>
-                            <constraint firstItem="8hi-Fo-egW" firstAttribute="trailing" secondItem="WJ1-ie-Aac" secondAttribute="trailing" id="jgU-rF-oh0"/>
-                            <constraint firstItem="mdE-iF-1QS" firstAttribute="leading" secondItem="8hi-Fo-egW" secondAttribute="leading" constant="20" id="kPe-1E-8rQ"/>
-                            <constraint firstItem="WJ1-ie-Aac" firstAttribute="leading" secondItem="8hi-Fo-egW" secondAttribute="leading" id="qFH-ay-Y0H"/>
-                            <constraint firstItem="8hi-Fo-egW" firstAttribute="trailing" secondItem="CD1-Qc-FzW" secondAttribute="trailing" constant="20" id="yWI-2I-KxP"/>
+                            <constraint firstItem="mdE-iF-1QS" firstAttribute="leading" secondItem="8hi-Fo-egW" secondAttribute="leading" constant="30" id="kPe-1E-8rQ"/>
+                            <constraint firstItem="8hi-Fo-egW" firstAttribute="trailing" secondItem="CD1-Qc-FzW" secondAttribute="trailing" constant="30" id="yWI-2I-KxP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -270,25 +273,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zfo-M4-eBT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2376.811594202899" y="-479.46428571428567"/>
+            <point key="canvasLocation" x="2376.8000000000002" y="-479.91004497751129"/>
         </scene>
         <!--Venues View Controller-->
         <scene sceneID="7mX-bX-j9e">
             <objects>
                 <viewController id="Ti8-l3-oEu" customClass="VenuesViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bwb-KW-afa">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="644"/>
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="478"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MJC-Yq-srf">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="644"/>
+                                <rect key="frame" x="0.0" y="0.0" width="335" height="478"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" id="UCm-5e-nnm" customClass="VenuesTableViewCell" customModule="Weather" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="335" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UCm-5e-nnm" id="s0x-TJ-wvP">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -296,12 +299,11 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VrM-6f-ySl"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MJC-Yq-srf" firstAttribute="leading" secondItem="bwb-KW-afa" secondAttribute="leading" id="DF7-YE-HNi"/>
-                            <constraint firstAttribute="bottom" secondItem="MJC-Yq-srf" secondAttribute="bottom" id="DVj-YQ-Q2k"/>
-                            <constraint firstItem="MJC-Yq-srf" firstAttribute="top" secondItem="bwb-KW-afa" secondAttribute="top" id="Oa6-B6-u95"/>
-                            <constraint firstAttribute="trailing" secondItem="MJC-Yq-srf" secondAttribute="trailing" id="nIi-2S-QWA"/>
+                            <constraint firstItem="MJC-Yq-srf" firstAttribute="top" secondItem="bwb-KW-afa" secondAttribute="top" id="4zo-Me-h4I"/>
+                            <constraint firstItem="MJC-Yq-srf" firstAttribute="trailing" secondItem="VrM-6f-ySl" secondAttribute="trailing" id="5UU-uc-5pc"/>
+                            <constraint firstItem="VrM-6f-ySl" firstAttribute="bottom" secondItem="MJC-Yq-srf" secondAttribute="bottom" id="5cI-p5-dfc"/>
+                            <constraint firstItem="MJC-Yq-srf" firstAttribute="leading" secondItem="VrM-6f-ySl" secondAttribute="leading" id="ok1-34-r7f"/>
                         </constraints>
                     </view>
                     <connections>
@@ -310,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fC8-fa-iA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="-479"/>
+            <point key="canvasLocation" x="1500.0000000000002" y="-479.46428571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Gf-WZ-44G">
@@ -318,7 +320,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="46Y-Rc-Dvr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3j0-9R-44o">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
