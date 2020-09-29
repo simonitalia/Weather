@@ -23,8 +23,14 @@ class VenuesViewController: UIViewController {
 	}
 	
 	var mainVC: MainViewController?
-	private var dataSource: UITableViewDiffableDataSource<VenuesTableViewSection, Venue>? //dataSource
-	private var venues: [Venue]? {
+	
+	//TableView Data DataSource
+	private typealias Snapshot = NSDiffableDataSourceSnapshot<VenuesTableViewSection, Venue>
+	private typealias DataSource = UITableViewDiffableDataSource<VenuesTableViewSection, Venue>
+	private var dataSource: DataSource?
+	
+	//TableView Data
+	private lazy var venues = [Venue]() {
 		didSet {
 			updateUI()
 		}
@@ -41,7 +47,7 @@ class VenuesViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configureVenuesTableView()
-		configureVenuesTableViewCell()
+		makeDataSource()
 	}
 	
 	
@@ -55,22 +61,12 @@ class VenuesViewController: UIViewController {
 	}
 	
 	
-	private func configureVenuesTableViewCell() {
-		self.dataSource = UITableViewDiffableDataSource<VenuesTableViewSection, Venue>(tableView: self.venuesTableView, cellProvider: { (tableView, indexPath, location) -> UITableViewCell? in
-		
-			let cell = tableView.dequeueReusableCell(withIdentifier: VenuesTableViewCell.reuseIdentifier, for: indexPath) as? VenuesTableViewCell
-			
-			cell?.setContent(for: location)
-			return cell
-		})
-	}
-
-	
 	//MARK: - UI Configuration
 	
 	private func updateUI() {
-		DispatchQueue.main.async { [unowned self] in
-			self.updateVenuesTableViewSnapshot()
+		DispatchQueue.main.async { [weak self] in
+			guard let self = self else { return }
+			self.updateSnapshot()
 		}
 	}
 }
@@ -79,12 +75,37 @@ class VenuesViewController: UIViewController {
 //MARK: - Venues TableView DataSource
 
 extension VenuesViewController {
-	private func updateVenuesTableViewSnapshot() {
-		guard let venues = self.venues else { return }
-		var snapshot = NSDiffableDataSourceSnapshot<VenuesTableViewSection, Venue>()
+	
+	private func makeDataSource() {
+		let dataSource = DataSource(tableView: self.venuesTableView, cellProvider: { (tableView, indexPath, venue) -> UITableViewCell? in
+		
+			let cell = tableView.dequeueReusableCell(withIdentifier: VenuesTableViewCell.reuseIdentifier, for: indexPath) as? VenuesTableViewCell
+			
+			cell?.setContent(for: venue)
+			return cell
+		})
+		
+		self.dataSource = dataSource
+	}
+	
+	private func updateSnapshot() {
+		var snapshot = Snapshot()
 		snapshot.appendSections([.main])
 		snapshot.appendItems(venues)
-		self.dataSource?.apply(snapshot, animatingDifferences: true, completion: nil)
+		self.dataSource?.apply(snapshot, animatingDifferences: true) { [weak self] in
+			guard let self = self else { return }
+			self.venuesTableView.reloadData() //shouldn't be required, but issue with animating UI table changes
+		}
+	}
+}
+
+
+//MARK: - VenuesViewController TableViewDelegate
+
+extension VenuesViewController: UITableViewDelegate {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let venue = venues[indexPath.row]
+		presentVenueDetailsViewController(passingObject: venue)
 	}
 }
 
@@ -97,28 +118,13 @@ extension VenuesViewController: MainViewControllerDelegate {
 	}
 }
 
-//MARK: - VenuesViewController TableViewDelegate
-
-extension VenuesViewController: UITableViewDelegate {
-	
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		guard let venues = self.venues else { return }
-		
-		let venue = venues[indexPath.row]
-		presentVenueDetailsViewController(passingObject: venue)
-	}
-	
-}
-
 
 //MARK: - Navigation
 
 extension VenuesViewController {
 	private func presentVenueDetailsViewController(passingObject venue: Venue) {
-		//setup destinationVC
 		let vc = self.storyboard?.instantiateViewController(withIdentifier: Identifier.Storyboard.venueDetailsVC) as! VenueDetailsViewController
 		vc.venue = venue
-		
 		
 		let nc = UINavigationController(rootViewController: vc)
 		nc.modalPresentationStyle = .fullScreen

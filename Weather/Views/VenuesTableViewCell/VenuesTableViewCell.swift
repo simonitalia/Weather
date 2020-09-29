@@ -17,10 +17,6 @@ class VenuesTableViewCell: UITableViewCell {
 		case temperature
 	}
 	
-	private enum Conditions {
-		
-	}
-	
 	
 	//MARK: - Accessible Cell identifiers
 	
@@ -35,6 +31,16 @@ class VenuesTableViewCell: UITableViewCell {
 	
 	
 	//MARK: - Cell Configuration
+	
+	override func awakeFromNib() {
+		configureCell()
+	}
+	
+	
+	private func configureCell() {
+		self.selectionStyle = .none
+	}
+	
 	
 	func setContent(for venue: Venue) {
 		labels.forEach {

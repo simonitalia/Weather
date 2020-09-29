@@ -18,6 +18,16 @@ class CountriesTableViewCell: UITableViewCell {
 
 	//MARK: - Cell Configuration
 	
+	override func awakeFromNib() {
+		configureCell()
+	}
+	
+	
+	private func configureCell() {
+		self.selectionStyle = .none
+	}
+	
+	
 	func setContent(with country: Country) {
 		textLabel?.text = country.name
 		imageView?.image = Countries.getFlagImage(for: country.countryID)

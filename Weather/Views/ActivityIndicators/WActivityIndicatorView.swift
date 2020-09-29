@@ -20,7 +20,8 @@ class WActivityIndicatorView: UIActivityIndicatorView {
 	}
 	
 	func animateSpinner(_ bool: Bool) {
-		DispatchQueue.main.async { [unowned self] in
+		DispatchQueue.main.async { [weak self] in
+			guard let self = self else { return }
 			bool ? self.startAnimating() : self.stopAnimating()
 			bool ? (self.isHidden = false) : (self.isHidden = true)
 		}

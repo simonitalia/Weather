@@ -9,7 +9,7 @@ import UIKit
 
 class WSortByButton: UIButton {
 	
-	enum SortType: String {
+	private enum SortType: String {
 		case venueName = "A-Z"
 		case temperature = "Temperature"
 		case lastUpdated  = "Last Updated"

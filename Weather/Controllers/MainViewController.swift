@@ -34,21 +34,26 @@ class MainViewController: UIViewController {
 	
 	@IBOutlet var sortByButtons: [WSortByButton]!
 	@IBAction func sortByButtonTapped(_ sender: WSortByButton) {
-		guard let venues = venuesDisplayed else { return }
+		
+		var sortedVenues = [Venue]()
 		
 		switch sender.tag {
 			case 0:
-				self.venuesDisplayed = Venues.sortedVenues(list: venues, using: .name)
+				sortedVenues = Venues.sortedVenues(list: venuesDisplayed, using: .name)
 			
 			case 1:
-				self.venuesDisplayed = Venues.sortedVenues(list: venues, using: .temperature)
+				sortedVenues = Venues.sortedVenues(list: venuesDisplayed, using: .temperature)
 				
 			case 2:
-				self.venuesDisplayed = Venues.sortedVenues(list: venues, using: .lastUpdated)
+				sortedVenues = Venues.sortedVenues(list: venuesDisplayed, using: .lastUpdated)
+				
 			default:
 				break
 		}
+		
+		updateDisplayedVenuesData(with: sortedVenues)
 	}
+	
 	
 	@IBOutlet weak var filterButton: WFilterButton!
 	@IBAction func filterButtonTapped(_ sender: Any) {
@@ -63,33 +68,43 @@ class MainViewController: UIViewController {
 	//all venues fetched from remote server
 	private var allVenues: Venues? {
 		didSet {
-			venuesDisplayed = allVenues?.list
 			configureFilterButton(with: nil)
+			updateDisplayedVenuesData(with: allVenues?.list ?? [])
 		}
 	}
 	
-	//venues diplayed on VenuesTableVC
-	private var venuesDisplayed: [Venue]? {
+	//venues diplayed on child VenuesTableVC
+	private lazy var venuesDisplayed = [Venue]() {
 		didSet {
-			guard let venues = venuesDisplayed else { return }
-			delegate?.updateVenuesDisplayed(with: venues)
+			delegate?.updateVenuesDisplayed(with: venuesDisplayed)
 		}
 	}
 	
 	
 	//MARK: - View Lifecycle
-	
+
     override func viewDidLoad() {
         super.viewDidLoad()
-		configureNavigationBar()
 		fireGetWeatherFeed()
+		configureNavigationBar()
 		configureSortByButtons()
     }
 	
 	
-	//MARK: - ViewController Configuration
+	//MARK: - DataSources Management
+	private func updateAllVenuesData(with allVenues: Venues?) {
+		self.allVenues = allVenues
+	}
+	
+	
+	private func updateDisplayedVenuesData(with venues: [Venue]) {
+		venuesDisplayed = venues
+	}
+	
 	
 	@objc private func fireGetWeatherFeed() {
+		if allVenues != nil { updateAllVenuesData(with: nil) } //reset displayed data
+		
 		enableUserInteraction(false)
 		activitySpinner.animateSpinner(true)
 		
@@ -99,8 +114,8 @@ class MainViewController: UIViewController {
 			self.enableUserInteraction(true)
 			
 			switch result {
-				case .success(let venues):
-					self.allVenues = venues
+				case .success(let allVenues):
+					self.updateAllVenuesData(with: allVenues)
 					
 				case .failure(let error):
 					self.presentAlert(title: "We had a problem!", message: error.rawValue, completionHandler: #selector(self.fireGetWeatherFeed))
@@ -112,7 +127,8 @@ class MainViewController: UIViewController {
 	//MARK: - UI Configuration
 	
 	private func enableUserInteraction(_ bool: Bool) {
-		DispatchQueue.main.async { [unowned self] in
+		DispatchQueue.main.async { [weak self] in
+			guard let self = self else { return }
 			self.view.isUserInteractionEnabled = bool
 		}
 	}
@@ -129,8 +145,9 @@ class MainViewController: UIViewController {
 	
 
 	private func configureFilterButton(with countryName: String?) {
-		DispatchQueue.main.async { [unowned self] in
-			filterButton.setButtonText(with: countryName)
+		DispatchQueue.main.async { [weak self] in
+			guard let self = self else { return }
+			self.filterButton.setButtonText(with: countryName)
 		}
 	}
 	
@@ -169,8 +186,8 @@ extension MainViewController {
 
 extension MainViewController: CountriesTableViewControllerDelegate {
 	func filterVenues(by country: Country) {
-		let filterdVenues = allVenues?.filterList(by: country)
-		venuesDisplayed = filterdVenues
+		guard let filterdVenues = allVenues?.filterList(by: country) else { return }
+		updateDisplayedVenuesData(with: filterdVenues)
 		
 		let name = country.name
 		configureFilterButton(with: name)
