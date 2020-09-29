@@ -30,6 +30,7 @@ class CountriesTableViewCell: UITableViewCell {
 	
 	func setContent(with country: Country) {
 		textLabel?.text = country.name
-		imageView?.image = Countries.getFlagImage(for: country.countryID)
+		let image = Constants.AssetType.getImage(for: .flag(id: country.countryID))
+		imageView?.image = image
 	}
 }

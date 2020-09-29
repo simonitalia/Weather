@@ -58,37 +58,15 @@ class VenuesTableViewCell: UITableViewCell {
 					break
 			}
 			
-			iconImageView?.image = getImage(for: venue.conditionIcon)
+			if let conditionIcon = venue.conditionIcon {
+				iconImageView?.image = getImage(for: conditionIcon)
+			}
 		}
 	}
 	
 	
-	private func getImage(for conditionIcon: String?) -> UIImage? {
-		
-		switch conditionIcon {
-			case "clear":
-				return UIImage(named: Constants.AssetType.ConditionIcon.clear)
-			
-			case "fog":
-				return UIImage(named: Constants.AssetType.ConditionIcon.fog)
-				
-			case "hazy":
-				return UIImage(named: Constants.AssetType.ConditionIcon.hazy)
-				
-			case "mostlycloudy":
-				return UIImage(named: Constants.AssetType.ConditionIcon.mostlyCloudy)
-				
-			case "partlycloudy":
-				return UIImage(named: Constants.AssetType.ConditionIcon.partlyCloudy)
-			
-			case "rain":
-				return UIImage(named: Constants.AssetType.ConditionIcon.rain)
-				
-			case "tstorms":
-				return UIImage(named: Constants.AssetType.ConditionIcon.thunderStorms)
-			
-			default:
-				return nil
-		}
+	private func getImage(for conditionIcon: String) -> UIImage? {
+		let image = Constants.AssetType.getImage(for: .conditionIcon(named: conditionIcon))
+		return image
 	}
 }

@@ -69,31 +69,22 @@ class VenueDetailsViewController: UIViewController {
 			switch tag {
 				case .name:
 					label.text = venue.name
-				
 				case .temperature:
 					label.text = venue.temperature
-					
 				case .condition:
 					label.text = venue.condition
-					
 				case .feelsLikeTitle:
 					label.text = LabelsText.TitleText.feelsLike
-					
 				case .humidityTitle:
 					label.text = LabelsText.TitleText.humidity
-				
 				case .windTitle:
 					label.text = LabelsText.TitleText.wind
-					
 				case .feelsLike:
 					label.text = venue.feelsLike
-					
 				case .humidity:
 					label.text = venue.humidity
-					
 				case .wind:
 					label.text = venue.wind
-					
 				case .lastUpdated:
 					if let lastUpdated = venue.lastUpdated {
 						label.text = "\(lastUpdated)"
@@ -113,6 +104,4 @@ class VenueDetailsViewController: UIViewController {
 	@objc private func dismissVC() {
 		dismiss(animated: true, completion: nil)
 	}
-    
-
 }

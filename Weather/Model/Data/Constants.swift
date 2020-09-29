@@ -10,7 +10,7 @@ import UIKit
 struct Constants {
 	
 	enum AssetType {
-		enum Flag {
+		enum CountryFlag {
 			static let australia = "flag-australia" //id = 16
 			static let hongKong = "flag-hong-kong" //id = 96
 			static let ireland = "flag-ireland" //id = 106
@@ -39,17 +39,17 @@ struct Constants {
 				case .flag(let id):
 				switch id {
 					case "16":
-						return AssetType.Flag.australia
+						return AssetType.CountryFlag.australia
 					case "96":
-						return AssetType.Flag.hongKong
+						return AssetType.CountryFlag.hongKong
 					case "106":
-						return AssetType.Flag.ireland
+						return AssetType.CountryFlag.ireland
 					case "170":
-						return AssetType.Flag.newZealand
+						return AssetType.CountryFlag.newZealand
 					case "194":
-						return AssetType.Flag.singapore
+						return AssetType.CountryFlag.singapore
 					case "79":
-						return AssetType.Flag.unitedKingdom
+						return AssetType.CountryFlag.unitedKingdom
 					default:
 						break
 				}
