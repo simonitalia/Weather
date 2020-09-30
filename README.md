@@ -6,7 +6,7 @@ A simple weather app that fetches weather information from a remote server for h
 *(based on age of weather data)
 
 ## Demo
-![Demo](WeatherAppDemo_30092020)
+![Demo](WeatherAppDemo_30092020.gif)
 
 
 ## Build and Device Compatibility
