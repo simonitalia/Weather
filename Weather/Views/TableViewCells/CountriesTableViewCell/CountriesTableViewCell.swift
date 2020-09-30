@@ -30,8 +30,8 @@ class CountriesTableViewCell: UITableViewCell {
 	
 	
 	private func configureCell() {
-		let padding = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
-		bounds = bounds.inset(by: padding)
+//		let padding = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
+//		bounds = bounds.inset(by: padding)
 		self.selectionStyle = .none
 	}
 	
