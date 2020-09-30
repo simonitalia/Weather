@@ -1,17 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "conditionIcon-mostlycloudy-20.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "conditionIcon-mostlycloudy-20@2x.png",
+      "filename" : "conditionIcon-mostlycloudy-60@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "conditionIcon-mostlycloudy-20@3x.png",
+      "filename" : "conditionIcon-mostlycloudy-60@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

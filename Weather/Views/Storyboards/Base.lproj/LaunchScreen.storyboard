@@ -40,7 +40,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="conditionIcon-partlycloudy" width="20" height="20"/>
+        <image name="conditionIcon-partlycloudy" width="60" height="60"/>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -70,7 +70,7 @@ struct Constants {
 						return AssetType.ConditionIcon.partlyCloudy
 					case "rain":
 						return AssetType.ConditionIcon.rain
-					case "tstorm":
+					case "tstorms":
 						return AssetType.ConditionIcon.thunderStorms
 					default:
 						return AssetType.defaultImage

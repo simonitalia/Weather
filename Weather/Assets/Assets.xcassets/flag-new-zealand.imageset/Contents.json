@@ -1,17 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "flag-new-zealand-20.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "flag-new-zealand-20@2x.png",
+      "filename" : "flag-new-zealand-60@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "flag-new-zealand-20@3x.png",
+      "filename" : "flag-new-zealand-60@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
