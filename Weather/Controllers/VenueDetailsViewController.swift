@@ -74,9 +74,9 @@ class VenueDetailsViewController: UIViewController {
 				case .name:
 					label.text = venue.name
 				case .temperature:
-					label.text = venue.temperature
+					label.text = venue.temperature ?? Constants.Text.setDefaultText(prefix: nil)
 				case .condition:
-					label.text = venue.condition
+					label.text = venue.condition ?? Constants.Text.setDefaultText(prefix: nil)
 				case .feelsLikeTitle:
 					label.text = LabelsText.TitleText.feelsLike
 				case .humidityTitle:
@@ -84,11 +84,11 @@ class VenueDetailsViewController: UIViewController {
 				case .windTitle:
 					label.text = LabelsText.TitleText.wind
 				case .feelsLike:
-					label.text = venue.feelsLike
+					label.text = venue.feelsLike ?? Constants.Text.setDefaultText(prefix: nil)
 				case .humidity:
-					label.text = venue.humidity?.dropPrefix("Humidity: ")
+					label.text = venue.humidity?.dropPrefix("Humidity: ") ?? Constants.Text.setDefaultText(prefix: nil)
 				case .wind:
-					label.text = venue.wind?.dropPrefix("Wind: ")
+					label.text = venue.wind?.dropPrefix("Wind: ") ?? Constants.Text.setDefaultText(prefix: nil)
 				case .lastUpdated:
 					if let lastUpdated = venue.lastUpdated {
 						label.text = "Last updated: \(lastUpdated.convertToDateString())"

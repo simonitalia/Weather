@@ -9,6 +9,21 @@ import UIKit
 
 struct Constants {
 	
+	private init(){}//guard from initialization
+	
+	enum Text {
+		static let noText = "-"
+		static let unknownText = "unknown"
+		
+		static func setDefaultText(prefix: String?) -> String {
+			if let prefix = prefix {
+				return "\(prefix): \(Text.noText)"
+			} else {
+				return Text.noText
+			}
+		}
+	}
+	
 	enum AssetType {
 		enum CountryFlag {
 			static let australia = "flag-australia" //id = 16

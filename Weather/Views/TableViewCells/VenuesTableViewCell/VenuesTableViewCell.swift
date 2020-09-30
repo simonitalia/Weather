@@ -49,10 +49,10 @@ class VenuesTableViewCell: UITableViewCell {
 					$0.text = venue.name
 				
 				case VenueLocation.condition.rawValue:
-					$0.text = venue.condition ?? "-"
+					$0.text = venue.condition ?? Constants.Text.setDefaultText(prefix: nil)
 					
 				case VenueLocation.temperature.rawValue:
-					$0.text = venue.temperature ?? "-"
+					$0.text = venue.temperature ?? Constants.Text.setDefaultText(prefix: nil)
 				
 				default:
 					break
